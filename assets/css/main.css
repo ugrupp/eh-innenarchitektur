@@ -11,6 +11,7 @@
 /**
  * Custom base styles.
  */
+@import "./base.css";
 
 /**
  * Tailwind's component classes and any component classes registered by plugins.
@@ -20,8 +21,8 @@
 /**
  * Custom components.
  */
-@import "./headlines.css";
-@import "./richtext.css";
+@import "./components/headlines.css";
+@import "./components/richtext.css";
 
 /**
  * Tailwind's utility classes and any utility classes registered by plugins.

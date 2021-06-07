@@ -26,7 +26,7 @@
 
   /* Bullet point */
   & ul:not(.c-checked-list) li::before {
-    @apply bg-indigo-500;
+    @apply bg-red-600;
     width: var(--list-bullet-size);
     height: var(--list-bullet-size);
     /* magic number, based on the bullet point dimensions and font-size */
@@ -46,7 +46,7 @@
         content: counter(item) ".";
         counter-increment: item;
 
-        @apply font-bold;
+        @apply font-normal;
         color: inherit;
       }
     }

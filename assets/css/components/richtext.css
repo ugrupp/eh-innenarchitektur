@@ -4,7 +4,7 @@
 .richtext {
   /* Inline elements */
   & :is(p, address, ul, ol) {
-    @apply text-sm sm:text-base;
+    @apply text-sm sm:text-base tracking-wider;
   }
 
   & small {
@@ -12,7 +12,7 @@
   }
 
   & strong {
-    @apply font-bold;
+    @apply font-normal;
   }
 
   & em {
@@ -20,12 +20,12 @@
   }
 
   & a {
-    @apply text-indigo-800;
+    @apply text-red-600;
     text-decoration: underline;
 
     &:hover,
     &:focus {
-      @apply text-indigo-500;
+      @apply text-red-400;
     }
   }
 
@@ -42,7 +42,7 @@
   }
 
   & blockquote {
-    @apply border-l-4 border-indigo-500 pl-4 py-1;
+    @apply border-l-4 border-red-600 pl-4 py-1;
   }
 
   & code {

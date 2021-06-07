@@ -1,0 +1,22 @@
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-y: scroll;
+}
+
+::selection {
+  background: theme("colors.red.600");
+  color: theme("colors.white");
+}
+
+b,
+strong {
+  font-weight: theme("fontWeight.normal");
+}
+
+[x-cloak] {
+  display: none !important;
+}

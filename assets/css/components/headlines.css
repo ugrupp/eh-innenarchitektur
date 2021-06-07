@@ -1,0 +1,26 @@
+/* Headlines */
+@layer components {
+  .headline--h1 {
+    @apply font-normal text-2xl sm:text-3xl;
+  }
+
+  .headline--h2 {
+    @apply font-normal text-xl sm:text-2xl;
+  }
+
+  .headline--h3 {
+    @apply font-normal text-lg sm:text-xl;
+  }
+
+  .headline--h4 {
+    @apply font-normal text-base sm:text-lg;
+  }
+
+  .headline--h5 {
+    @apply font-normal text-sm sm:text-base;
+  }
+
+  .headline--h6 {
+    @apply font-normal text-xs sm:text-sm;
+  }
+}
