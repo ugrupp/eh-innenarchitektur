@@ -3,8 +3,9 @@
 
 .richtext {
   /* Inline elements */
-  & :is(p, address, ul, ol) {
-    @apply text-sm sm:text-base tracking-wider;
+  & :is(p, address, ul, ol, blockquote) {
+    @apply text-base tracking-wider;
+    @apply sm:text-lg;
   }
 
   & small {
@@ -12,7 +13,7 @@
   }
 
   & strong {
-    @apply font-normal;
+    @apply font-normal font-mono tracking-normal;
   }
 
   & em {
@@ -46,11 +47,11 @@
   }
 
   & code {
-    @apply text-sm bg-gray-100 p-1 rounded-md;
+    @apply text-base bg-gray-100 p-1 rounded-md;
   }
 
   & pre {
-    @apply overflow-x-auto bg-gray-100 rounded-md py-3 px-4 text-sm;
+    @apply overflow-x-auto bg-gray-100 rounded-md py-3 px-4 text-base;
 
     & code {
       padding: 0;

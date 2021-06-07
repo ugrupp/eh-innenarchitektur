@@ -3,7 +3,7 @@ enabled: true
 handle: default
 hasUrls: true
 language: de
-name: 'Craft Starter 2021'
+name: 'EH Innenarchitektur'
 primary: true
-siteGroup: 637f5208-30a9-45a6-a8d5-53e10b7de4cf # Craft Starter 2021
+siteGroup: 637f5208-30a9-45a6-a8d5-53e10b7de4cf # EH Innenarchitektur
 sortOrder: 1

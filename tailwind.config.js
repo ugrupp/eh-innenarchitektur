@@ -28,6 +28,14 @@ module.exports = {
           "monospace",
         ],
       },
+      fontSize: {
+        base: ["1rem", 1.55], // 16px
+        lg: ["1.1875rem", 1.55], // 19px
+        xl: ["1.375rem", 1.55], // 22px
+        "2xl": ["1.5625rem", 1.55], // 25px
+        "3xl": ["1.875rem", 1.55], // 30px
+        "4xl": ["2.4375rem", 1.55], // 39px
+      },
       colors: {
         warmGray: {
           600: "#4B4A46",

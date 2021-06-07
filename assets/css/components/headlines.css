@@ -1,26 +1,26 @@
 /* Headlines */
 @layer components {
   .headline--h1 {
-    @apply font-normal text-2xl sm:text-3xl;
+    @apply text-3xl leading-tight sm:text-4xl sm:leading-tight;
   }
 
   .headline--h2 {
-    @apply font-normal text-xl sm:text-2xl;
+    @apply text-2xl leading-tight sm:text-3xl sm:leading-tight;
   }
 
   .headline--h3 {
-    @apply font-normal text-lg sm:text-xl;
+    @apply text-lg leading-tight sm:text-xl sm:leading-tight;
   }
 
   .headline--h4 {
-    @apply font-normal text-base sm:text-lg;
+    @apply text-base sm:text-lg;
   }
 
   .headline--h5 {
-    @apply font-normal text-sm sm:text-base;
+    @apply text-sm sm:text-base;
   }
 
   .headline--h6 {
-    @apply font-normal text-xs sm:text-sm;
+    @apply text-xs sm:text-sm;
   }
 }

@@ -46,7 +46,7 @@
         content: counter(item) ".";
         counter-increment: item;
 
-        @apply font-normal;
+        @apply font-normal font-mono tracking-normal;
         color: inherit;
       }
     }
