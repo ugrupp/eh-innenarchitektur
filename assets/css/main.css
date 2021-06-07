@@ -23,6 +23,7 @@
  */
 @import "./components/headlines.css";
 @import "./components/richtext.css";
+@import "./components/intro.css";
 
 /**
  * Tailwind's utility classes and any utility classes registered by plugins.

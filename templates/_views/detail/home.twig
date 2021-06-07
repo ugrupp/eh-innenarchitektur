@@ -1,5 +1,13 @@
 {% extends "_views/detail/default" %}
 
 {% block view_article %}
-  Home
+  {% include "_components/sections/intro" with {
+    options: {
+      lead: entry.introLead,
+      body: entry.introBody,
+      features: entry.introFeatures,
+      image1: entry.introImage1.one(),
+      image2: entry.introImage2.one(),
+    }
+  } %}
 {% endblock %}

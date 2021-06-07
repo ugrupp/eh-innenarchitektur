@@ -44,6 +44,9 @@ module.exports = {
           600: "#E63209",
         },
       },
+      maxWidth: {
+        "screen-2xl": "1552px",
+      },
     },
   },
   variants: {

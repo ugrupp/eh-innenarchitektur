@@ -1,0 +1,127 @@
+{% set defaults = {
+  lead: "",
+  body: "",
+  features: "",
+  image1: null,
+  image2: null,
+} %}
+
+{% set options = options is defined ? defaults|merge(options) : defaults %}
+
+<section id="intro" class="intro">
+  {% embed "_components/container" with {
+    topOptions: options,
+  } only %}
+    {% block content %}
+      <div class="grid grid-cols-12">
+        {# Lead #}
+        {% set lead = tag("div", {
+          class: [
+            "col-start-1 col-span-10",
+            "md:col-start-1 md:col-span-7",
+            "lg:row-start-1 lg:col-span-5 lg:mt-20",
+            "xl:col-span-4",
+          ],
+        })%}
+        {% set leadContent %}
+          {% embed "_components/text" with {
+            topOptions: topOptions
+          } only %}
+            {% block content topOptions.lead %}
+          {% endembed %}
+        {% endset %}
+        {{ lead|append(leadContent) }}
+
+
+        {# Body #}
+        {% set body = tag("div", {
+          class: [
+            "col-start-3 col-span-10 mt-16",
+            "md:col-start-3 md:col-span-7",
+            "lg:row-start-2 lg:col-start-2 lg:col-span-5 lg:mt-24",
+            "xl:col-start-2 xl:col-span-4",
+          ],
+        })%}
+        {% set bodyContent %}
+          {% embed "_components/text" with {
+            topOptions: topOptions
+          } only %}
+            {% block content topOptions.body %}
+          {% endembed %}
+        {% endset %}
+        {{ body|append(bodyContent) }}
+
+
+        {# Badge #}
+        {% set badge = tag("div", {
+          class: [
+            "col-start-1 col-span-10 mt-16",
+            "sm:row-start-3 sm:col-start-6",
+            "lg:row-start-1 lg:col-start-8 lg:col-span-2 lg:mt-0",
+          ],
+        })%}
+        {% set badgeContent %}
+          {{ svg("@root/assets/img/svg-sprite/claim.svg")|attr({ class: 'w-[100px] h-[100px] md:w-[120px] md:h-[120px] 2xl:w-[150px] 2xl:h-[150px]' }) }}
+          <span class="sr-only">Wir machen es schön</span>
+        {% endset %}
+        {{ badge|append(badgeContent) }}
+
+
+        {# Image 1 #}
+        {% set image1 = tag("div", {
+          class: [
+            "col-start-3 col-span-10 mt-10",
+            "sm:row-start-3 sm:col-start-9 sm:col-span-4 sm:mt-16",
+            "lg:row-start-1 lg:row-span-2 lg:col-start-10 lg:col-span-3 lg:mt-0",
+          ],
+        })%}
+        {% set image1Content %}
+          {% include "_components/image" with {
+            options: {
+              image: topOptions.image1,
+              wrapperClasses: ["bg-gray-100", "rounded-xl", "lg:mb-48"]
+            }
+          } %}
+        {% endset %}
+        {{ image1|append(image1Content) }}
+
+
+        {# Features #}
+        {% set features = tag("div", {
+          class: [
+            "col-start-1 col-span-10 mt-16 intro__features",
+            "md:col-start-1 md:col-span-7",
+            "lg:row-start-3 lg:col-start-8 lg:col-span-4 lg:-mt-24"
+          ],
+        })%}
+        {% set featuresContent %}
+          {% embed "_components/text" with {
+            topOptions: topOptions
+          } only %}
+            {% block content topOptions.features %}
+          {% endembed %}
+        {% endset %}
+        {{ features|append(featuresContent) }}
+
+
+        {# Image 2 #}
+        {% set image2 = tag("div", {
+          class: [
+            "col-start-3 col-span-10 mt-16",
+            "sm:row-start-5 sm:col-start-8 sm:col-span-5",
+            "lg:row-start-3 lg:col-start-1 lg:col-span-4 lg:mt-56",
+          ],
+        })%}
+        {% set image2Content %}
+          {% include "_components/image" with {
+            options: {
+              image: topOptions.image2,
+              wrapperClasses: ["bg-gray-100", "rounded-xl"]
+            }
+          } %}
+        {% endset %}
+        {{ image2|append(image2Content) }}
+      </div>
+    {% endblock %}
+  {% endembed %}
+</section>

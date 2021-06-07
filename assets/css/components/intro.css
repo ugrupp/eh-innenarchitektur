@@ -1,0 +1,7 @@
+.intro__features .richtext h3 {
+  @apply font-mono tracking-normal ml-5 mb-2 mt-12;
+
+  & + p {
+    margin-top: 0;
+  }
+}
