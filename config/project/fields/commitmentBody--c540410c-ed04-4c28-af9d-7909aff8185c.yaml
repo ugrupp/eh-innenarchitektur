@@ -1,0 +1,27 @@
+contentColumnType: text
+fieldGroup: 1c84eac1-8855-44cf-9f9b-688ac7e8b763 # Engagement
+handle: commitmentBody
+instructions: ''
+name: Body
+searchable: true
+settings:
+  availableTransforms: '*'
+  availableVolumes: '*'
+  cleanupHtml: true
+  columnType: text
+  configSelectionMode: choose
+  defaultTransform: ''
+  manualConfig: ''
+  purifierConfig: ''
+  purifyHtml: '1'
+  redactorConfig: ''
+  removeEmptyTags: ''
+  removeInlineStyles: '1'
+  removeNbsp: ''
+  showHtmlButtonForNonAdmins: '1'
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+  uiMode: enlarged
+translationKeyFormat: null
+translationMethod: none
+type: craft\redactor\Field

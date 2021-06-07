@@ -1,0 +1,27 @@
+contentColumnType: text
+fieldGroup: ce49713a-870c-4b7f-8f6b-5db63f52eede # Intro
+handle: introLead
+instructions: ''
+name: Lead
+searchable: true
+settings:
+  availableTransforms: '*'
+  availableVolumes: '*'
+  cleanupHtml: true
+  columnType: text
+  configSelectionMode: choose
+  defaultTransform: ''
+  manualConfig: ''
+  purifierConfig: ''
+  purifyHtml: '1'
+  redactorConfig: ''
+  removeEmptyTags: ''
+  removeInlineStyles: '1'
+  removeNbsp: ''
+  showHtmlButtonForNonAdmins: '1'
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+  uiMode: enlarged
+translationKeyFormat: null
+translationMethod: none
+type: craft\redactor\Field

@@ -13,138 +13,9 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             warning: null
             width: 100
-          -
-            fieldUid: bd0b654e-c321-43b6-a6e4-c1eee7eea226 # Textabstand unten beibehalten
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
-            fieldUid: 85b32876-7624-416a-9e71-6a74a4cf23fa # Spacing
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
         name: Content
         sortOrder: 1
 fields:
-  85b32876-7624-416a-9e71-6a74a4cf23fa: # Spacing
-    contentColumnType: text
-    fieldGroup: null
-    handle: spacing
-    instructions: "1\\. Spalte: Abstand oben\r\n2\\. Spalte: Abstand unten\r\n\r\n**[Erlaubte Werte](https://tailwindcss.com/docs/margin):** `0, px, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 60, 64, 72, 80, 96`\r\n\r\n"
-    name: Spacing
-    searchable: false
-    settings:
-      addRowLabel: ''
-      columnType: text
-      columns:
-        __assoc__:
-          -
-            - col1
-            -
-              __assoc__:
-                -
-                  - heading
-                  - Basis
-                -
-                  - handle
-                  - base
-                -
-                  - width
-                  - ''
-                -
-                  - type
-                  - singleline
-          -
-            - col2
-            -
-              __assoc__:
-                -
-                  - heading
-                  - SM
-                -
-                  - handle
-                  - sm
-                -
-                  - width
-                  - ''
-                -
-                  - type
-                  - singleline
-          -
-            - col3
-            -
-              __assoc__:
-                -
-                  - heading
-                  - MD
-                -
-                  - handle
-                  - md
-                -
-                  - width
-                  - ''
-                -
-                  - type
-                  - singleline
-          -
-            - col4
-            -
-              __assoc__:
-                -
-                  - heading
-                  - LG
-                -
-                  - handle
-                  - lg
-                -
-                  - width
-                  - ''
-                -
-                  - type
-                  - singleline
-          -
-            - col5
-            -
-              __assoc__:
-                -
-                  - heading
-                  - XL
-                -
-                  - handle
-                  - xl
-                -
-                  - width
-                  - ''
-                -
-                  - type
-                  - singleline
-      maxRows: '2'
-      minRows: '2'
-    translationKeyFormat: null
-    translationMethod: none
-    type: craft\fields\Table
-  bd0b654e-c321-43b6-a6e4-c1eee7eea226: # Textabstand unten beibehalten
-    contentColumnType: boolean
-    fieldGroup: null
-    handle: keepRichtextBottomSpacing
-    instructions: ''
-    name: 'Textabstand unten beibehalten'
-    searchable: false
-    settings:
-      default: false
-      offLabel: null
-      onLabel: null
-    translationKeyFormat: null
-    translationMethod: none
-    type: craft\fields\Lightswitch
   fac07c15-8566-4efd-baab-35b5d55b1f8e: # Text
     contentColumnType: text
     fieldGroup: null
@@ -176,4 +47,4 @@ fields:
     type: craft\redactor\Field
 handle: text
 name: Text
-sortOrder: 2
+sortOrder: 1

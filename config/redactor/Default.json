@@ -10,7 +10,7 @@
     "link",
     "file"
   ],
-  "formattingHide": ["h1", "h5", "h6"],
+  "formattingHide": ["h5", "h6"],
   "plugins": ["fullscreen", "properties", "inlinestyle"],
   "linkNewTab": true,
   "toolbarFixed": true

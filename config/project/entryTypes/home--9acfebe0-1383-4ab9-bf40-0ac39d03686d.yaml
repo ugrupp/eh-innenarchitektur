@@ -35,6 +35,207 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             warning: null
             width: 100
+          -
+            heading: Intro
+            type: craft\fieldlayoutelements\Heading
+          -
+            fieldUid: 98f932bd-8c6e-4dce-a913-9022c49df939 # Lead
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 4675e844-5d79-4947-8e42-76c7f3fac831 # Body
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: e9fa5d8e-26b4-48e9-9af8-ed203e3b9cee # Features
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 61267367-7aa4-4684-914c-dc8cb48ec63c # Bild 1
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 522e3c84-1125-4614-8706-6488944fad08 # Bild 2
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            heading: Leistungen
+            type: craft\fieldlayoutelements\Heading
+          -
+            fieldUid: f2824332-ea64-4526-ac08-2a402989e8c7 # Lead
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: dcc8b04d-d98b-48c7-b3b1-c7cd65e1f96a # Leistungen
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 448f219b-e301-49cf-9000-98d276d1e4ab # Foot
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            heading: 'Über mich'
+            type: craft\fieldlayoutelements\Heading
+          -
+            fieldUid: c70eea9f-e92f-4a5f-a212-e426ee3c7bec # Lead
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 164e5bca-e2e3-426c-a6e2-c1ab69e2fcef # Body
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: cd82cc67-fcf0-4003-a071-716181df7626 # Foot
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 51023438-fa47-4a2d-94a3-5ad8a9d63cd2 # Bild 1
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 75447463-f001-4227-a347-d8a08450798a # Bild 2
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: bebbb652-0c54-4628-ac0e-2bf1b8f92850 # Bild 3
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 7620723c-c775-45da-b35b-0859ad5d46de # Portrait
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: be79d7ad-e53a-4fb9-8bf4-fdcf39fb8de6 # Werdegang
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 51dcc0e6-30f1-43a9-8ef2-f024a9e471dc # Presse
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            heading: Engagement
+            type: craft\fieldlayoutelements\Heading
+          -
+            fieldUid: a0fa9084-5a08-4051-9cc0-43794e9edea1 # Lead
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: c540410c-ed04-4c28-af9d-7909aff8185c # Body
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 289eda0a-6e62-4d9d-b494-2bb078eb2c94 # Bild 1
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: bf6e0957-5887-41c6-8a66-6c3bbf75f221 # Bild 2
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: Inhalt
         sortOrder: 1
       -

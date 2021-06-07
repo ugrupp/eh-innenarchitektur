@@ -1,0 +1,14 @@
+contentColumnType: string
+fieldGroup: 21403b57-0519-407e-97a2-58440ba2b647 # Über mich
+handle: aboutPress
+instructions: ''
+name: Presse
+searchable: true
+settings:
+  contentTable: '{{%matrixcontent_aboutpress}}'
+  maxBlocks: ''
+  minBlocks: ''
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

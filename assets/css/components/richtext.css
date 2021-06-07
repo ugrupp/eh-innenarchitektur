@@ -12,8 +12,13 @@
     @apply text-sm;
   }
 
-  & strong {
+  & :is(strong, mark) {
     @apply font-normal font-mono tracking-normal;
+  }
+
+  & mark {
+    background-color: transparent;
+    color: inherit;
   }
 
   & em {

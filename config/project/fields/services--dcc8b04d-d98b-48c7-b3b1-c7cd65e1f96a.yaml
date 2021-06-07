@@ -1,0 +1,14 @@
+contentColumnType: string
+fieldGroup: 58fe56b4-c788-4da9-b003-59661e5c3816 # Leistungen
+handle: services
+instructions: ''
+name: Leistungen
+searchable: true
+settings:
+  contentTable: '{{%matrixcontent_services}}'
+  maxBlocks: ''
+  minBlocks: ''
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

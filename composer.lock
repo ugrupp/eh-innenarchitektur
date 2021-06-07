@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c964c3b4365b0862b59173804d7b95df",
+    "content-hash": "2a19ab378e9aaf653c6b3f7de5b501ab",
     "packages": [
         {
             "name": "am-impact/amcommand",
@@ -3961,6 +3961,69 @@
                 "source": "https://github.com/verbb/expanded-singles"
             },
             "time": "2020-07-27T09:39:40+00:00"
+        },
+        {
+            "name": "verbb/field-manager",
+            "version": "2.2.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/verbb/field-manager.git",
+                "reference": "9ff1715b5df2d4b30011b629a82229ec6741bae2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/verbb/field-manager/zipball/9ff1715b5df2d4b30011b629a82229ec6741bae2",
+                "reference": "9ff1715b5df2d4b30011b629a82229ec6741bae2",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.5.0",
+                "verbb/base": "^1.0.2"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Field Manager",
+                "handle": "field-manager",
+                "changelogUrl": "https://raw.githubusercontent.com/verbb/field-manager/craft-3/CHANGELOG.md",
+                "class": "verbb\\fieldmanager\\FieldManager"
+            },
+            "autoload": {
+                "psr-4": {
+                    "verbb\\fieldmanager\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Verbb",
+                    "homepage": "https://verbb.io"
+                }
+            ],
+            "description": "Manage your fields and field groups with ease with simple field or group cloning and quicker overall management.",
+            "keywords": [
+                "Craft",
+                "cms",
+                "craft-plugin",
+                "craftcms",
+                "field manager"
+            ],
+            "support": {
+                "docs": "https://github.com/verbb/field-manager",
+                "email": "support@verbb.io",
+                "issues": "https://github.com/verbb/field-manager/issues?state=open",
+                "rss": "https://github.com/verbb/field-manager/commits/v2.atom",
+                "source": "https://github.com/verbb/field-manager"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/verbb",
+                    "type": "github"
+                }
+            ],
+            "time": "2021-05-30T07:04:40+00:00"
         },
         {
             "name": "vlucas/phpdotenv",

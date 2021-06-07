@@ -1,0 +1,27 @@
+contentColumnType: text
+fieldGroup: 163d7a3b-3435-4fe0-99ed-4afd32dfd8d5 # Footer
+handle: footerLead
+instructions: ''
+name: Lead
+searchable: true
+settings:
+  availableTransforms: '*'
+  availableVolumes: '*'
+  cleanupHtml: true
+  columnType: text
+  configSelectionMode: choose
+  defaultTransform: ''
+  manualConfig: ''
+  purifierConfig: ''
+  purifyHtml: '1'
+  redactorConfig: ''
+  removeEmptyTags: ''
+  removeInlineStyles: '1'
+  removeNbsp: ''
+  showHtmlButtonForNonAdmins: '1'
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+  uiMode: enlarged
+translationKeyFormat: null
+translationMethod: none
+type: craft\redactor\Field

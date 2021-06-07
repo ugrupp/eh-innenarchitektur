@@ -1,11 +1,11 @@
 field: a2ff65ee-37ac-459a-b8b6-260a51655430 # Content-Builder
 fieldLayouts:
-  4d5a620e-6c02-46bc-8c7c-2ab81fdac2fe:
+  3416ff81-3184-4a19-a02b-6b8fb6fc4b1d:
     tabs:
       -
         elements:
           -
-            fieldUid: 92340a5e-d8bf-42d8-bef4-0fb91b286e50 # Text
+            fieldUid: 4ed46586-0a29-4c32-b6d9-55057597ead9 # Text 1
             instructions: null
             label: null
             required: false
@@ -14,7 +14,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 3d0df712-869a-4931-b61a-83ac6e20daf8 # Bild
+            fieldUid: 60f90423-2534-4e9e-88d8-6921be51f41a # Text 2
             instructions: null
             label: null
             required: false
@@ -25,47 +25,12 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
-  3d0df712-869a-4931-b61a-83ac6e20daf8: # Bild
-    contentColumnType: string
-    fieldGroup: null
-    handle: image
-    instructions: ''
-    name: Bild
-    searchable: false
-    settings:
-      allowSelfRelations: false
-      allowUploads: true
-      allowedKinds:
-        - image
-      defaultUploadLocationSource: 'volume:1441d23a-77fd-4cb1-9e07-7deda2c44aca' # Bilder
-      defaultUploadLocationSubpath: ''
-      limit: '1'
-      localizeRelations: false
-      previewMode: full
-      restrictFiles: '1'
-      selectionLabel: 'Bild auswählen'
-      showSiteMenu: true
-      showUnpermittedFiles: false
-      showUnpermittedVolumes: false
-      singleUploadLocationSource: 'volume:1441d23a-77fd-4cb1-9e07-7deda2c44aca' # Bilder
-      singleUploadLocationSubpath: ''
-      source: null
-      sources:
-        - 'volume:1441d23a-77fd-4cb1-9e07-7deda2c44aca' # Bilder
-        - 'volume:7ffc34d4-a657-4360-afb7-0a5eb1f677d9' # Piktogramme
-      targetSiteId: null
-      useSingleFolder: false
-      validateRelatedElements: false
-      viewMode: large
-    translationKeyFormat: null
-    translationMethod: site
-    type: craft\fields\Assets
-  92340a5e-d8bf-42d8-bef4-0fb91b286e50: # Text
+  4ed46586-0a29-4c32-b6d9-55057597ead9: # Text 1
     contentColumnType: text
     fieldGroup: null
-    handle: text
+    handle: text1
     instructions: ''
-    name: Text
+    name: 'Text 1'
     searchable: true
     settings:
       availableTransforms: '*'
@@ -88,6 +53,34 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\redactor\Field
-handle: textImage
-name: 'Text + Bild'
-sortOrder: 3
+  60f90423-2534-4e9e-88d8-6921be51f41a: # Text 2
+    contentColumnType: text
+    fieldGroup: null
+    handle: text2
+    instructions: ''
+    name: 'Text 2'
+    searchable: false
+    settings:
+      availableTransforms: '*'
+      availableVolumes: '*'
+      cleanupHtml: true
+      columnType: text
+      configSelectionMode: choose
+      defaultTransform: ''
+      manualConfig: ''
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: ''
+      removeEmptyTags: ''
+      removeInlineStyles: '1'
+      removeNbsp: ''
+      showHtmlButtonForNonAdmins: '1'
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      uiMode: enlarged
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+handle: textText
+name: 'Text + Text'
+sortOrder: 2

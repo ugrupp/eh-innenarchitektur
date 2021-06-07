@@ -10,6 +10,7 @@
     "sebastianlenz/linkfield": "^1.0",
     "studioespresso/craft-dumper": "^2.0",
     "verbb/expanded-singles": "^1.1",
+    "verbb/field-manager": "^2.2",
     "vlucas/phpdotenv": "^3.4.0"
   },
   "require-dev": {
