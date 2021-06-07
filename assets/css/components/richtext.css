@@ -26,8 +26,7 @@
   }
 
   & a {
-    @apply text-red-600;
-    text-decoration: underline;
+    @apply transition-colors text-red-600;
 
     &:hover,
     &:focus {
@@ -98,5 +97,19 @@
     :is(h1, .headline--h1, h2, .headline--h2, h3, .headline--h3, h4, .headline--h4, h5, .headline--h5, h6, .headline--h6)
     a {
     @apply text-current;
+  }
+}
+
+/* Special cases */
+.pages .richtext h3 {
+  @apply text-red-600;
+}
+
+.pages .richtext a {
+  color: currentColor;
+
+  &:hover,
+  &:focus {
+    @apply text-red-600;
   }
 }

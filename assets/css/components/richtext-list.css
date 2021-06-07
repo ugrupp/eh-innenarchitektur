@@ -1,5 +1,5 @@
 :root {
-  --list-bullet-size: 0.6em;
+  --list-bullet-size: 0.4em;
 }
 
 .richtext {
@@ -26,11 +26,11 @@
 
   /* Bullet point */
   & ul:not(.c-checked-list) li::before {
-    @apply bg-red-600;
+    @apply bg-gray-400;
     width: var(--list-bullet-size);
     height: var(--list-bullet-size);
     /* magic number, based on the bullet point dimensions and font-size */
-    margin-top: 0.4em;
+    margin-top: 0.58em;
   }
 
   /* sub list bullet point is identical to main bullet point here
@@ -46,8 +46,7 @@
         content: counter(item) ".";
         counter-increment: item;
 
-        @apply font-normal font-mono tracking-normal;
-        color: inherit;
+        @apply text-gray-500 font-normal font-mono tracking-normal;
       }
     }
   }

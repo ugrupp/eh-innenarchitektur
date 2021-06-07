@@ -1,0 +1,25 @@
+{% set defaults = {
+  text1: null,
+  text2: null,
+  classes: [],
+  attributes: {},
+} %}
+
+{% set options = (options ??? false) ? defaults|merge(options) : defaults %}
+
+<div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-48">
+  {% embed "_components/text" with {
+    text: options.text1,
+    options: {
+      keepBottomSpacing: true,
+    }
+  } only %}
+    {% block content text %}
+  {% endembed %}
+
+  {% embed "_components/text" with {
+    text: options.text2,
+  } only %}
+    {% block content text %}
+  {% endembed %}
+</div>

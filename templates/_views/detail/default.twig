@@ -10,6 +10,26 @@
 
 <article id="article">
   {% block view_article %}
+    {# Title #}
+    {% embed "_components/section" with {
+      entry: entry,
+      options: {
+        id: "title"
+      }
+    } only %}
+      {% block content %}
+        {% embed "_components/container" with { entry: entry } only %}
+          {% block content %}
+            {% embed "_components/text" with { entry: entry } only %}
+              {% block content %}
+                <h1 class="headline--h2"><strong>{{ entry.title }}</strong></h1>
+              {% endblock %}
+            {% endembed %}
+          {% endblock %}
+        {% endembed %}
+      {% endblock %}
+    {% endembed %}
+
     {# Content builder #}
     {% if entry.contentBuilder ??? false %}
       {% include "_blocks/content-builder/_router" with {

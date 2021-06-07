@@ -1,8 +1,8 @@
 .richtext {
   /* Inline elements */
   & :is(p, address, pre) {
-    @apply my-4;
-    @apply sm:my-6;
+    @apply my-6;
+    @apply sm:my-8;
   }
 
   & hr {
@@ -25,19 +25,24 @@
 
   & h2,
   & .headline--h2 {
-    @apply my-4;
-    @apply sm:my-6;
+    @apply my-8;
+    @apply sm:my-10;
   }
 
   & h3,
   & .headline--h3 {
-    @apply mt-6 mb-4;
+    @apply my-8;
+    @apply sm:my-10;
   }
 
   & h4,
   & .headline--h4 {
-    @apply mt-6 mb-2;
-    @apply sm:mb-4;
+    @apply mt-6;
+    @apply sm:mt-8;
+
+    & + :is(p, address) {
+      margin-top: 0;
+    }
   }
 
   & h5,
@@ -55,21 +60,21 @@
   /* Lists */
   & ul,
   & ol {
-    @apply mt-4 mb-8;
-    @apply sm:mb-10;
+    @apply my-6;
+    @apply sm:my-8;
 
     & li {
       &:not(:last-of-type) {
-        @apply mb-4;
-        @apply sm:mb-6;
+        @apply mb-2;
+        @apply sm:mb-2;
       }
     }
 
     /* Nested lists */
     & ul,
     & ol {
-      @apply mt-4 mb-0;
-      @apply sm:mt-6 sm:mb-0;
+      @apply mt-2 mb-0;
+      @apply sm:mt-2 sm:mb-0;
     }
   }
 

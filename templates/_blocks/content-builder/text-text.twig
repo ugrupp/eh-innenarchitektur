@@ -7,13 +7,12 @@
   {% block content %}
     {% embed "_components/container" with { self: self } only %}
       {% block content %}
-        {% embed "_components/text" with { self: self } only %}
-          {% block content %}
-            <p>Unknown content builder block type:
-              <code>{{ self.type }}</code>
-            </p>
-          {% endblock %}
-        {% endembed %}
+        {% include "_components/text-text" with {
+          options: {
+            text1: self.text1,
+            text2: self.text2,
+          }
+        } only %}
       {% endblock %}
     {% endembed %}
   {% endblock %}

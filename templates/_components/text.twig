@@ -6,16 +6,26 @@
 
 {% set defaults = {
   tag: "div",
+  keepBottomSpacing: false,
+  keepTopSpacing: false,
   classes: [],
   attributes: {},
 } %}
 
 {% set options = (options ??? false) ? defaults|merge(options) : defaults %}
 
+{% set modifiers = [] %}
+{% if options.keepTopSpacing %}
+  {% set modifiers = modifiers|push("richtext--keep-top-spacing") %}
+{% endif %}
+{% if options.keepBottomSpacing %}
+  {% set modifiers = modifiers|push("richtext--keep-bottom-spacing") %}
+{% endif %}
+
 {# Create wrapper tag #}
 {% set wrapper = tag(options.tag,
   {
-    class: ["richtext"]|merge(options.classes)|filter|join(' '),
+    class: ["richtext"]|merge(modifiers)|merge(options.classes)|filter|join(' '),
   }
 )|attr(options.attributes) %}
 
