@@ -1,0 +1,11 @@
+enableVersioning: true
+handle: home
+name: Startseite
+propagationMethod: all
+siteSettings:
+  335a10e2-8b40-46e0-8f05-2a0883f6e52a: # Craft Starter 2021
+    enabledByDefault: true
+    hasUrls: true
+    template: _routers/page
+    uriFormat: __home__
+type: single

@@ -1,0 +1,26 @@
+{#
+ # Component Template – Text
+ # -------------------------
+ #
+-#}
+
+{% set defaults = {
+  tag: "div",
+  classes: [],
+  attributes: {},
+} %}
+
+{% set options = (options ??? false) ? defaults|merge(options) : defaults %}
+
+{# Create wrapper tag #}
+{% set wrapper = tag(options.tag,
+  {
+    class: ["richtext"]|merge(options.classes)|filter|join(' '),
+  }
+)|attr(options.attributes) %}
+
+{# Content block #}
+{% set content %}{% block content %}{% endblock %}{% endset %}
+
+{# Render it #}
+{{ wrapper|append(content) }}

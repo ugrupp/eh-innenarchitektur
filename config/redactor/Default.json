@@ -1,0 +1,17 @@
+{
+  "buttons": [
+    "html",
+    "formatting",
+    "bold",
+    "italic",
+    "unorderedlist",
+    "orderedlist",
+    "line",
+    "link",
+    "file"
+  ],
+  "formattingHide": ["h1"],
+  "plugins": ["fullscreen", "properties", "inlinestyle"],
+  "linkNewTab": true,
+  "toolbarFixed": true
+}

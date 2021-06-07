@@ -1,0 +1,26 @@
+/* Headlines */
+@layer components {
+  .headline--h1 {
+    @apply font-bold text-2xl sm:text-3xl;
+  }
+
+  .headline--h2 {
+    @apply font-bold text-xl sm:text-2xl;
+  }
+
+  .headline--h3 {
+    @apply font-bold text-lg sm:text-xl;
+  }
+
+  .headline--h4 {
+    @apply font-bold text-base sm:text-lg;
+  }
+
+  .headline--h5 {
+    @apply font-bold text-sm sm:text-base;
+  }
+
+  .headline--h6 {
+    @apply font-bold text-xs sm:text-sm;
+  }
+}

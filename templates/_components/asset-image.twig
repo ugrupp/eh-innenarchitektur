@@ -1,0 +1,19 @@
+{% set defaults = {
+  src: '',
+} %}
+
+{% set options = options is defined ? defaults|merge(options) : defaults %}
+
+{% embed "_components/asset" with {
+  options: {
+    src: options.src,
+  }
+} %}
+  {% block outputDev %}
+    <img src="{{ baseUrl }}/{{options.src}}" />
+  {% endblock %}
+
+  {% block outputProd %}
+    <img src="{{ baseUrl }}/{{ asset.assets[0] }}" />
+  {% endblock %}
+{% endembed %}

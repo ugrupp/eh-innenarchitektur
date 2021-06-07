@@ -1,0 +1,42 @@
+{% set defaults = {
+  tag: "figure",
+  image: null,
+  caption: "",
+  classes: [],
+  attributes: {},
+} %}
+
+{% set options = (options ??? false) ? defaults|merge(options) : defaults %}
+
+{# Create wrapper tag #}
+{% set figure = tag("figure", {
+  class: options.classes|filter|join(' '),
+})|attr(options.attributes) %}
+
+{# Content block #}
+{% set content %}
+  {% if options.image|length %}
+    {# Image #}
+    {% include '_components/image' with {
+      options: {
+        image: options.image,
+      },
+    } %}
+
+    {# Caption #}
+    {% if options.caption|length %}
+      {% embed "_components/text" with {
+        caption: options.caption,
+        options: {
+          tag: "figcaption",
+          classes: ["mt-2"],
+        }
+      } only %}
+        {% block content caption %}
+      {% endembed %}
+    {% endif %}
+  {% endif %}
+{% endset %}
+
+{# Render #}
+{{ figure|append(content) }}

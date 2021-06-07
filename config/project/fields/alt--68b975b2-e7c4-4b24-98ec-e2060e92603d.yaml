@@ -1,0 +1,18 @@
+contentColumnType: text
+fieldGroup: 0338854d-7c8c-49ea-b537-1f39ec5a4c62 # Allgemein
+handle: alt
+instructions: ''
+name: Alt-Text
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: null
+  initialRows: '4'
+  multiline: ''
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

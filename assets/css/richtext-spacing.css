@@ -1,0 +1,84 @@
+.richtext {
+  /* Inline elements */
+  & :is(p, address, pre) {
+    @apply my-4;
+    @apply sm:my-6;
+  }
+
+  & hr {
+    @apply my-8;
+    @apply lg:my-12;
+  }
+
+  & blockquote {
+    @apply my-8;
+    @apply lg:my-12;
+  }
+
+  /* Headlines */
+  & h1,
+  & .headline--h1 {
+    @apply mt-4 mb-6;
+    @apply sm:mt-6 sm:mb-8;
+    @apply lg:mb-10;
+  }
+
+  & h2,
+  & .headline--h2 {
+    @apply my-4;
+    @apply sm:my-6;
+  }
+
+  & h3,
+  & .headline--h3 {
+    @apply mt-6 mb-4;
+  }
+
+  & h4,
+  & .headline--h4 {
+    @apply mt-6 mb-2;
+    @apply sm:mb-4;
+  }
+
+  & h5,
+  & .headline--h5 {
+    @apply mt-4 mb-2;
+    @apply sm:mt-6;
+  }
+
+  & h6,
+  & .headline--h6 {
+    @apply mt-4 mb-2;
+    @apply sm:mt-6;
+  }
+
+  /* Lists */
+  & ul,
+  & ol {
+    @apply mt-4 mb-8;
+    @apply sm:mb-10;
+
+    & li {
+      &:not(:last-of-type) {
+        @apply mb-4;
+        @apply sm:mb-6;
+      }
+    }
+
+    /* Nested lists */
+    & ul,
+    & ol {
+      @apply mt-4 mb-0;
+      @apply sm:mt-6 sm:mb-0;
+    }
+  }
+
+  /* General */
+  &:not(.richtext--keep-top-spacing) > :first-child {
+    margin-top: 0;
+  }
+
+  &:not(.richtext--keep-bottom-spacing) > :last-child {
+    margin-bottom: 0;
+  }
+}

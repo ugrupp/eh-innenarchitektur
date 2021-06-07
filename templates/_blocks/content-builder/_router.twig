@@ -1,0 +1,33 @@
+{#
+ # Component Template – Content builder
+ # ---------------------------------
+ #
+ # This template is used to output HTML for an "Content-Builder" Matrix field.
+ #
+ # A `self` variable is expected in this template.
+-#}
+
+{% set prevType = null %}
+{% set nextType = null %}
+{% set blocks = self %}
+{% set groupIndex = 1 %}
+{% set sectionWrapperOpen = false %}
+
+{% for i, block in blocks.all() %}
+
+  {% set type = (nextType ?: block.type.handle) %}
+  {% set nextType = (not loop.last ? blocks[i+1].type.handle) %}
+  {% set groupIndex = (prevType == type) ? (groupIndex + 1) : 1 %}
+
+  {% include [
+    '_blocks/content-builder/' ~ type|kebab,
+    '_blocks/content-builder/default',
+  ] with {
+    self: block,
+    nextType: nextType,
+    prevType: prevType,
+    groupIndex: groupIndex,
+  } %}
+
+  {% set prevType = type %}
+{% endfor %}

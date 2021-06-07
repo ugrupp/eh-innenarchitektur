@@ -1,0 +1,16 @@
+{% embed "_components/section" with {
+  self: self,
+  options: {
+    id: "#{ self.type|kebab }-#{ self.id }"
+  }
+} only %}
+  {% block content %}
+    {% embed "_components/container" with { self: self } only %}
+      {% block content %}
+        <p>Unknown content builder block type:
+          <code>{{ self.type }}</code>
+        </p>
+      {% endblock %}
+    {% endembed %}
+  {% endblock %}
+{% endembed %}

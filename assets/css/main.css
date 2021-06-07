@@ -1,0 +1,33 @@
+/**
+ * Custom webfonts.
+ */
+@import "./fonts.css";
+
+/**
+ * Tailwind's base styles and any base styles registered by plugins.
+ */
+@import "tailwindcss/base";
+
+/**
+ * Custom base styles.
+ */
+
+/**
+ * Tailwind's component classes and any component classes registered by plugins.
+ */
+@import "tailwindcss/components";
+
+/**
+ * Custom components.
+ */
+@import "./headlines.css";
+@import "./richtext.css";
+
+/**
+ * Tailwind's utility classes and any utility classes registered by plugins.
+ */
+@import "tailwindcss/utilities";
+
+/**
+ * Custom utilities.
+ */

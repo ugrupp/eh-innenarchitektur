@@ -1,0 +1,19 @@
+{% embed "_components/section" with {
+  self: self,
+  options: {
+    id: "#{ self.type|kebab }-#{ self.id }"
+  }
+} only %}
+  {% block content %}
+    {% embed "_components/container" with { self: self } only %}
+      {% block content %}
+        {% include "_components/figure" with {
+          options: {
+            image: self.image.one(),
+            caption: self.caption,
+          }
+        } %}
+      {% endblock %}
+    {% endembed %}
+  {% endblock %}
+{% endembed %}

@@ -1,0 +1,45 @@
+contentColumnType: text
+fieldGroup: 0338854d-7c8c-49ea-b537-1f39ec5a4c62 # Allgemein
+handle: seo
+instructions: ''
+name: SEO
+searchable: false
+settings:
+  description: ''
+  hideSocial: ''
+  robots:
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+  socialImage: ''
+  suffixAsPrefix: null
+  title:
+    -
+      __assoc__:
+        -
+          - key
+          - '1'
+        -
+          - locked
+          - '0'
+        -
+          - template
+          - '{title}'
+    -
+      __assoc__:
+        -
+          - key
+          - '2'
+        -
+          - locked
+          - '0'
+        -
+          - template
+          - ' - {{ siteName }}'
+  titleSuffix: null
+translationKeyFormat: null
+translationMethod: none
+type: ether\seo\fields\SeoField

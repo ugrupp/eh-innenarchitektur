@@ -1,0 +1,96 @@
+@import "./richtext-spacing.css";
+@import "./richtext-list.css";
+
+.richtext {
+  /* Inline elements */
+  & :is(p, address, ul, ol) {
+    @apply text-sm sm:text-base;
+  }
+
+  & small {
+    @apply text-sm;
+  }
+
+  & strong {
+    @apply font-bold;
+  }
+
+  & em {
+    font-style: italic;
+  }
+
+  & a {
+    @apply text-indigo-800;
+    text-decoration: underline;
+
+    &:hover,
+    &:focus {
+      @apply text-indigo-500;
+    }
+  }
+
+  & abbr {
+    text-decoration: none;
+    border-bottom: 1px dashed currentColor;
+    cursor: help;
+  }
+
+  & hr {
+    @apply bg-gray-300;
+    height: 2px;
+    border: 0 none;
+  }
+
+  & blockquote {
+    @apply border-l-4 border-indigo-500 pl-4 py-1;
+  }
+
+  & code {
+    @apply text-sm bg-gray-100 p-1 rounded-md;
+  }
+
+  & pre {
+    @apply overflow-x-auto bg-gray-100 rounded-md py-3 px-4 text-sm;
+
+    & code {
+      padding: 0;
+      background-color: transparent;
+      color: inherit;
+      font-size: inherit;
+      font-family: inherit;
+      line-height: inherit;
+    }
+  }
+
+  /* Headlines */
+  & :is(h1, .headline--h1) {
+    @apply headline--h1;
+  }
+
+  & :is(h2, .headline--h2) {
+    @apply headline--h2;
+  }
+
+  & :is(h3, .headline--h3) {
+    @apply headline--h3;
+  }
+
+  & :is(h4, .headline--h4) {
+    @apply headline--h4;
+  }
+
+  & :is(h5, .headline--h5) {
+    @apply headline--h5;
+  }
+
+  & :is(h6, .headline--h6) {
+    @apply headline--h6;
+  }
+
+  /* Links in headlines */
+  &
+    :is(h1, .headline--h1, h2, .headline--h2, h3, .headline--h3, h4, .headline--h4, h5, .headline--h5, h6, .headline--h6)
+    a {
+    @apply text-current;
+  }
+}

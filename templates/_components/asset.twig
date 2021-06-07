@@ -1,0 +1,27 @@
+{% set defaults = {
+  src: '',
+} %}
+
+{% set options = options is defined ? defaults|merge(options) : defaults %}
+{% set baseUrl = siteUrl|trim('/', 'right') %}
+
+{% block manifest %}
+  {% set env = getenv('ENVIRONMENT') %}
+
+  {# Development #}
+  {% if env == 'dev' %}
+    {% set baseUrl = baseUrl ~ ':2170' %}
+
+    {% block outputDev %}
+    {% endblock %}
+
+  {# Production #}
+  {% else %}
+    {% set manifest = '/dist/manifest.json' | readManifest %}
+    {% set asset = manifest[options.src] %}
+    {% set baseUrl = baseUrl ~ '/dist' %}
+
+    {% block outputProd %}
+    {% endblock %}
+  {% endif %}
+{% endblock %}

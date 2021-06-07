@@ -1,0 +1,17 @@
+{% embed "_components/section" with {
+  self: self,
+  options: {
+    spacing: self.spacing,
+    id: "#{ self.type|kebab }-#{ self.id }"
+  }
+} only %}
+  {% block content %}
+    {% embed "_components/container" with { self: self } only %}
+      {% block content %}
+        {% embed "_components/text" with { self: self } only %}
+          {% block content self.text %}
+        {% endembed %}
+      {% endblock %}
+    {% endembed %}
+  {% endblock %}
+{% endembed %}

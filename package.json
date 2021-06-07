@@ -1,0 +1,36 @@
+{
+  "name": "eh-innenarchitektur",
+  "version": "1.0.0",
+  "description": "EH Innenarchitektur Website",
+  "license": "UNLICENSED",
+  "scripts": {
+    "dev": "vite",
+    "build": "cross-env NODE_ENV=production vite build",
+    "serve": "vite preview",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": {
+    "name": "Urs Grupp, 21sieben",
+    "email": "urs@21sieben.de",
+    "url": "https://www.21sieben.de"
+  },
+  "browser": "/web/index.php",
+  "private": true,
+  "browserslist": [
+    "last 2 versions"
+  ],
+  "devDependencies": {
+    "@types/node": "^14.14.37",
+    "@vitejs/plugin-legacy": "^1.4.1",
+    "cross-env": "^7.0.3",
+    "postcss": "^8.2.14",
+    "postcss-preset-env": "^6.7.0",
+    "tailwindcss": "^2.1.2",
+    "vite": "^2.3.6",
+    "vite-plugin-full-reload": "^0.2.2",
+    "vite-plugin-imagemin": "^0.3.2"
+  },
+  "dependencies": {
+    "lazysizes": "^5.3.2"
+  }
+}

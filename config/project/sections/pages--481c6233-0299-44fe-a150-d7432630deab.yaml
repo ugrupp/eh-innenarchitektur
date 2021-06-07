@@ -1,0 +1,14 @@
+enableVersioning: true
+handle: pages
+name: Seitenbaum
+propagationMethod: all
+siteSettings:
+  335a10e2-8b40-46e0-8f05-2a0883f6e52a: # Craft Starter 2021
+    enabledByDefault: true
+    hasUrls: true
+    template: _routers/page
+    uriFormat: '{parent.uri}/{slug}'
+structure:
+  maxLevels: null
+  uid: c429603d-fef8-4cc5-8662-dd877e028db1
+type: structure

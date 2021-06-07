@@ -1,0 +1,49 @@
+fieldLayouts:
+  180c975a-4077-4eb8-b058-a10829264757:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\AssetTitleField
+            warning: null
+            width: 100
+          -
+            fieldUid: 68b975b2-e7c4-4b24-98ec-e2060e92603d # Alt-Text
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Inhalt
+        sortOrder: 1
+handle: pictograms
+hasUrls: true
+name: Piktogramme
+settings:
+  path: '@webroot/pictograms'
+sortOrder: 0
+titleTranslationKeyFormat: null
+titleTranslationMethod: null
+type: craft\volumes\Local
+url: '@web/pictograms'

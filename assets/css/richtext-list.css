@@ -1,0 +1,62 @@
+:root {
+  --list-bullet-size: 0.6em;
+}
+
+.richtext {
+  /* General list */
+  & ul,
+  & ol {
+    @apply pl-8 sm:pl-10 lg:pl-12;
+
+    & li {
+      clear: left;
+
+      /* Bullet point / counter / badge */
+      &::before {
+        content: "";
+        float: left;
+        @apply -ml-8 sm:-ml-10 lg:-ml-12;
+      }
+
+      & p:last-of-type {
+        padding: 0;
+      }
+    }
+  }
+
+  /* Bullet point */
+  & ul:not(.c-checked-list) li::before {
+    @apply bg-indigo-500;
+    width: var(--list-bullet-size);
+    height: var(--list-bullet-size);
+    /* magic number, based on the bullet point dimensions and font-size */
+    margin-top: 0.4em;
+  }
+
+  /* sub list bullet point is identical to main bullet point here
+  ul:not(.c-checked-list) li ul li::before {
+  } */
+
+  /* Counter */
+  & ol {
+    counter-reset: item;
+
+    & li {
+      &::before {
+        content: counter(item) ".";
+        counter-increment: item;
+
+        @apply font-bold;
+        color: inherit;
+      }
+    }
+  }
+
+  /* Sub ol */
+  & ol li ol {
+    /* Counter */
+    & li::before {
+      content: counters(item, ".");
+    }
+  }
+}
