@@ -24,6 +24,7 @@
 @import "./components/headlines.css";
 @import "./components/richtext.css";
 @import "./components/intro.css";
+@import "./components/services.css";
 
 /**
  * Tailwind's utility classes and any utility classes registered by plugins.

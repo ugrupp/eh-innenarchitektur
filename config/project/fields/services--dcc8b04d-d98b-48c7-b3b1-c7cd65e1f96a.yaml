@@ -6,7 +6,7 @@ name: Leistungen
 searchable: true
 settings:
   contentTable: '{{%matrixcontent_services}}'
-  maxBlocks: ''
+  maxBlocks: '4'
   minBlocks: ''
   propagationMethod: all
 translationKeyFormat: null

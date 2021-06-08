@@ -1,0 +1,5 @@
+.services__service .richtext small {
+  display: block;
+  margin-left: auto;
+  @apply max-w-[10rem] sm:max-w-[16rem];
+}

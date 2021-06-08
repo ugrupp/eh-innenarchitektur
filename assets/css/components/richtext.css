@@ -8,17 +8,17 @@
     @apply sm:text-lg;
   }
 
-  & small {
-    @apply text-sm;
-  }
-
-  & :is(strong, mark) {
+  & :is(strong, mark, small) {
     @apply font-normal font-mono tracking-normal;
   }
 
   & mark {
     background-color: transparent;
     color: inherit;
+  }
+
+  & small {
+    @apply text-xs sm:text-sm;
   }
 
   & em {

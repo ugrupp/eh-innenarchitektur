@@ -1,0 +1,107 @@
+{% set defaults = {
+  lead: "",
+  services: [],
+  foot: "",
+} %}
+
+{% set options = options is defined ? defaults|merge(options) : defaults %}
+
+{# TODO:
+* font-size lists (text-lg, sm:text-xl)
+#}
+<section id="leistungen" class="services bg-warmGray-600 text-white pt-28 sm:pt-32 lg:pt-40 xl:pt-56 pb-56 xl:pb-80">
+  {% embed "_components/container" with {
+    topOptions: options,
+  } only %}
+    {% block content %}
+      <div class="grid grid-cols-12">
+        {# Lead #}
+        {% set lead = tag("div", {
+          class: [
+            "col-start-1 col-span-10",
+            "md:col-start-1 md:col-span-7",
+            "lg:row-start-1 lg:col-span-5",
+            "xl:col-span-4",
+          ],
+        })%}
+        {% set leadContent %}
+          {% embed "_components/text" with {
+            topOptions: topOptions
+          } only %}
+            {% block content topOptions.lead %}
+          {% endembed %}
+        {% endset %}
+        {{ lead|append(leadContent) }}
+
+        {# Services #}
+        {% set servicePositions = [
+          [
+            "col-start-3 col-span-10 mt-20",
+            "md:col-start-3 md:col-span-7",
+            "lg:row-start-2 lg:row-span-2 lg:col-start-8 lg:col-span-5 lg:mt-24",
+            "xl:col-start-8 xl:col-span-4 xl:mt-36",
+          ],
+          [
+            "col-start-1 col-span-10 mt-20",
+            "md:col-start-1 md:col-span-7",
+            "lg:row-start-3 lg:col-start-2 lg:col-span-5 lg:mt-0 lg:-mb-36",
+            "xl:col-start-2 xl:col-span-4",
+          ],
+          [
+            "col-start-3 col-span-10 mt-20",
+            "md:col-start-3 md:col-span-7",
+            "lg:row-start-4 lg:col-start-8 lg:col-span-5 lg:mt-40",
+            "xl:col-start-8 xl:col-span-4",
+          ],
+          [
+            "col-start-1 col-span-10 mt-20",
+            "md:col-start-1 md:col-span-7",
+            "lg:row-start-5 lg:col-start-1 lg:col-span-5 lg:mt-24",
+            "xl:col-start-1 xl:col-span-4 xl:mt-36",
+          ],
+        ] %}
+
+        {% for service in topOptions.services %}
+          {% if servicePositions[loop.index0] ??? false %}
+            {# Single service #}
+            {% set serviceWrapper = tag("div", {
+              class: [
+                "services__service",
+                servicePositions[loop.index0]|join(" ")
+              ],
+            }) %}
+            {% set serviceContent %}
+              {% embed "_components/text" with {
+                service: service
+              } only %}
+                {% block content %}
+                  {{ service.lead }}
+                  {{ service.services }}
+                {% endblock %}
+              {% endembed %}
+            {% endset %}
+            {{ serviceWrapper|append(serviceContent) }}
+          {% endif %}
+        {% endfor %}
+
+        {# Foot #}
+        {% set foot = tag("div", {
+          class: [
+            "col-start-3 col-span-10 mt-20",
+            "md:col-start-3 md:col-span-7",
+            "lg:row-start-6 lg:col-start-8 lg:col-span-5 lg:mt-28",
+            "xl:col-start-9 xl:col-span-4"
+          ],
+        })%}
+        {% set footContent %}
+          {% embed "_components/text" with {
+            topOptions: topOptions
+          } only %}
+            {% block content topOptions.foot %}
+          {% endembed %}
+        {% endset %}
+        {{ foot|append(footContent) }}
+      </div>
+    {% endblock %}
+  {% endembed %}
+</section>

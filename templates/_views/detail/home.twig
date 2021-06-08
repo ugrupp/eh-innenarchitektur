@@ -10,4 +10,12 @@
       image2: entry.introImage2.one(),
     }
   } %}
+
+  {% include "_components/sections/services" with {
+    options: {
+      lead: entry.servicesLead,
+      services: entry.services.all(),
+      foot: entry.servicesFoot,
+    }
+  } %}
 {% endblock %}
