@@ -40,10 +40,11 @@ module.exports = {
       },
       colors: {
         warmGray: {
-          600: "#4B4A46",
+          50: "#f9f9f9",
+          600: "#4b4a46",
         },
         red: {
-          600: "#E63209",
+          600: "#e63209",
         },
       },
       maxWidth: {

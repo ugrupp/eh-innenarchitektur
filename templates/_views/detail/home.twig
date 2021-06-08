@@ -1,49 +1,53 @@
 {% extends "_views/detail/default" %}
 
 {% block view_article %}
-  {% include "_components/sections/intro" with {
-    options: {
-      lead: entry.introLead,
-      body: entry.introBody,
-      features: entry.introFeatures,
-      image1: entry.introImage1.one(),
-      image2: entry.introImage2.one(),
-    }
-  } %}
+  <div class="pb-32 lg:pb-56">
+    <div class="bg-warmGray-50 pt-28 lg:pt-36">
+      {% include "_components/sections/intro" with {
+        options: {
+          lead: entry.introLead,
+          body: entry.introBody,
+          features: entry.introFeatures,
+          image1: entry.introImage1.one(),
+          image2: entry.introImage2.one(),
+        }
+      } %}
+    </div>
 
-  {% include "_components/sections/services" with {
-    options: {
-      lead: entry.servicesLead,
-      services: entry.services.all(),
-      foot: entry.servicesFoot,
-    }
-  } %}
+    {% include "_components/sections/services" with {
+      options: {
+        lead: entry.servicesLead,
+        services: entry.services.all(),
+        foot: entry.servicesFoot,
+      }
+    } %}
 
-  {% include "_components/sections/about" with {
-    options: {
-      lead: entry.aboutLead,
-      body: entry.aboutBody,
-      foot: entry.aboutFoot,
-      image1: entry.aboutImage1.one(),
-      image2: entry.aboutImage2.one(),
-      image3: entry.aboutImage3.one(),
-    }
-  } %}
+    {% include "_components/sections/about" with {
+      options: {
+        lead: entry.aboutLead,
+        body: entry.aboutBody,
+        foot: entry.aboutFoot,
+        image1: entry.aboutImage1.one(),
+        image2: entry.aboutImage2.one(),
+        image3: entry.aboutImage3.one(),
+      }
+    } %}
 
-  {% include "_components/sections/about2" with {
-    options: {
-      resume: entry.aboutResume,
-      portrait: entry.aboutPortrait.one(),
-      press: entry.aboutPress.all(),
-    }
-  } %}
+    {% include "_components/sections/about2" with {
+      options: {
+        resume: entry.aboutResume,
+        portrait: entry.aboutPortrait.one(),
+        press: entry.aboutPress.all(),
+      }
+    } %}
 
-  {% include "_components/sections/commitment" with {
-    options: {
-      lead: entry.commitmentLead,
-      body: entry.commitmentBody,
-      image1: entry.commitmentImage1.one(),
-      image2: entry.commitmentImage2.one(),
-    }
-  } %}
+    {% include "_components/sections/commitment" with {
+      options: {
+        lead: entry.commitmentLead,
+        body: entry.commitmentBody,
+        image1: entry.commitmentImage1.one(),
+        image2: entry.commitmentImage2.one(),
+      }
+    } %}
+  </div>
 {% endblock %}

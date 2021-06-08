@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "cross-env NODE_ENV=production vite build",
     "serve": "vite preview",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "svgo": "mkdir -p ../svg/svg-o && svgo ../svg/*.svg -o ../svg/svg-o"
   },
   "author": {
     "name": "Urs Grupp, 21sieben",
