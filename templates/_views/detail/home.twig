@@ -37,4 +37,13 @@
       press: entry.aboutPress.all(),
     }
   } %}
+
+  {% include "_components/sections/commitment" with {
+    options: {
+      lead: entry.commitmentLead,
+      body: entry.commitmentBody,
+      image1: entry.commitmentImage1.one(),
+      image2: entry.commitmentImage2.one(),
+    }
+  } %}
 {% endblock %}

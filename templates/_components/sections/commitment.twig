@@ -1,0 +1,99 @@
+{% set defaults = {
+  lead: "",
+  body: "",
+  image1: null,
+  image2: null,
+} %}
+
+{% set options = options is defined ? defaults|merge(options) : defaults %}
+
+<section id="engagement" class="commitment pt-32 lg:pt-56">
+  {% embed "_components/container" with {
+    topOptions: options,
+  } only %}
+    {% block content %}
+      <div class="grid grid-cols-12">
+        {# Lead #}
+        {% set lead = tag("div", {
+          class: [
+            "col-start-1 col-span-10 mb-12",
+            "md:col-start-1 md:col-span-7",
+            "lg:col-start-1 lg:col-span-5 lg:mb-16",
+            "xl:col-start-1 xl:col-span-4"
+          ],
+        })%}
+        {% set leadContent %}
+          {% embed "_components/text" with {
+            topOptions: topOptions
+          } only %}
+            {% block content topOptions.lead %}
+          {% endembed %}
+        {% endset %}
+        {{ lead|append(leadContent) }}
+
+
+        {# Body #}
+        {% set body = tag("div", {
+          class: [
+            "col-start-3 col-span-10",
+            "md:col-start-3 md:col-span-7",
+            "lg:row-start-2 lg:col-start-2 lg:col-span-5",
+            "xl:col-start-2 xl:col-span-4"
+          ],
+        })%}
+        {% set bodyContent %}
+          {% embed "_components/text" with {
+            topOptions: topOptions
+          } only %}
+            {% block content topOptions.body %}
+          {% endembed %}
+        {% endset %}
+        {{ body|append(bodyContent) }}
+
+
+        {# Image 1 #}
+        {% set image1 = tag("div", {
+          class: [
+            "max-w-[400px] col-start-3 col-span-10 mt-14",
+            "md:col-start-3 md:col-span-7",
+            "lg:row-start-2 lg:col-start-8 lg:col-span-5 lg:mt-0 lg:ml-auto",
+            "xl:col-start-8 xl:col-span-4",
+          ],
+        })%}
+        {% set image1Content %}
+          {% if topOptions.image1|length %}
+            {% include "_components/image" with {
+              options: {
+                image: topOptions.image1,
+                wrapperClasses: ["bg-gray-100", "rounded-xl"]
+              }
+            } %}
+          {% endif %}
+        {% endset %}
+        {{ image1|append(image1Content) }}
+
+
+        {# Image 2 #}
+        {% set image2 = tag("div", {
+          class: [
+            "max-w-[400px] col-start-1 col-span-10 mt-14",
+            "md:col-start-1 md:col-span-7",
+            "lg:row-start-3 lg:col-start-7 lg:col-span-5 lg:mt-20",
+            "xl:col-start-8 xl:col-span-4",
+          ],
+        })%}
+        {% set image2Content %}
+          {% if topOptions.image2|length %}
+            {% include "_components/image" with {
+              options: {
+                image: topOptions.image2,
+                wrapperClasses: ["bg-gray-100", "rounded-xl"]
+              }
+            } %}
+          {% endif %}
+        {% endset %}
+        {{ image2|append(image2Content) }}
+      </div>
+    {% endblock %}
+  {% endembed %}
+</section>
