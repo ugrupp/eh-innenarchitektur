@@ -18,4 +18,15 @@
       foot: entry.servicesFoot,
     }
   } %}
+
+  {% include "_components/sections/about" with {
+    options: {
+      lead: entry.aboutLead,
+      body: entry.aboutBody,
+      foot: entry.aboutFoot,
+      image1: entry.aboutImage1.one(),
+      image2: entry.aboutImage2.one(),
+      image3: entry.aboutImage3.one(),
+    }
+  } %}
 {% endblock %}

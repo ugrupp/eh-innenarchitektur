@@ -76,12 +76,14 @@
           ],
         })%}
         {% set image1Content %}
-          {% include "_components/image" with {
-            options: {
-              image: topOptions.image1,
-              wrapperClasses: ["bg-gray-100", "rounded-xl", "lg:mb-48"]
-            }
-          } %}
+          {% if topOptions.image1|length %}
+            {% include "_components/image" with {
+              options: {
+                image: topOptions.image1,
+                wrapperClasses: ["bg-gray-100", "rounded-xl", "lg:mb-48"]
+              }
+            } %}
+          {% endif %}
         {% endset %}
         {{ image1|append(image1Content) }}
 
@@ -108,18 +110,21 @@
         {# Image 2 #}
         {% set image2 = tag("div", {
           class: [
+            "max-w-[400px]",
             "col-start-3 col-span-10 mt-16",
             "sm:row-start-5 sm:col-start-8 sm:col-span-5",
             "lg:row-start-3 lg:col-start-1 lg:col-span-4 lg:mt-56",
           ],
         })%}
         {% set image2Content %}
-          {% include "_components/image" with {
-            options: {
-              image: topOptions.image2,
-              wrapperClasses: ["bg-gray-100", "rounded-xl"]
-            }
-          } %}
+          {% if topOptions.image2|length %}
+            {% include "_components/image" with {
+              options: {
+                image: topOptions.image2,
+                wrapperClasses: ["bg-gray-100", "rounded-xl"]
+              }
+            } %}
+          {% endif %}
         {% endset %}
         {{ image2|append(image2Content) }}
       </div>
