@@ -1,0 +1,28 @@
+.about__resume {
+  & h4 {
+    @apply text-red-600 ml-5 mb-2 mt-6 sm:mt-16;
+  }
+
+  & p {
+    @apply text-lg sm:text-xl;
+  }
+}
+
+.about__press {
+  max-width: 30ch;
+
+  & a {
+    color: inherit;
+    text-decoration: underline;
+
+    &:hover,
+    &:focus {
+      @apply text-red-600;
+    }
+  }
+
+  & p {
+    @apply my-2;
+    @apply sm:my-2;
+  }
+}

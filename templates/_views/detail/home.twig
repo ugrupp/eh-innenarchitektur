@@ -29,4 +29,12 @@
       image3: entry.aboutImage3.one(),
     }
   } %}
+
+  {% include "_components/sections/about2" with {
+    options: {
+      resume: entry.aboutResume,
+      portrait: entry.aboutPortrait.one(),
+      press: entry.aboutPress.all(),
+    }
+  } %}
 {% endblock %}

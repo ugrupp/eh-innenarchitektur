@@ -25,6 +25,7 @@
     "cross-env": "^7.0.3",
     "postcss": "^8.2.14",
     "postcss-preset-env": "^6.7.0",
+    "svgo": "^2.3.0",
     "tailwindcss": "^2.1.2",
     "vite": "^2.3.6",
     "vite-plugin-full-reload": "^0.2.2",
