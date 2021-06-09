@@ -1,8 +1,21 @@
 {% extends "_views/detail/default" %}
 
+{# Some elements should be eager-loaded #}
+{% do craft.app.elements.eagerLoadElements(
+  className(entry),
+  [entry],
+  ['heroSlider.slide:image']
+) %}
+
 {% block view_article %}
   <div class="pb-32 lg:pb-56">
     <div class="bg-warmGray-50 pt-28 lg:pt-36">
+      {% include "_components/sections/hero" with {
+        options: {
+          slides: entry.heroSlider,
+        }
+      } %}
+
       {% include "_components/sections/intro" with {
         options: {
           lead: entry.introLead,

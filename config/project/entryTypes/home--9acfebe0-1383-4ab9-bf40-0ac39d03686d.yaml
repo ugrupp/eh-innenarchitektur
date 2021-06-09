@@ -27,7 +27,10 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: a2ff65ee-37ac-459a-b8b6-260a51655430 # Content-Builder
+            heading: Hero
+            type: craft\fieldlayoutelements\Heading
+          -
+            fieldUid: 971783c5-870d-4987-8ec2-ef8a766df4a5 # Slider
             instructions: null
             label: null
             required: false

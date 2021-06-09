@@ -18,3 +18,4 @@ if (staticAssets === 123456) {
 import "./lazyload";
 import "./menu-overlay";
 import "./menu";
+import "./hero";

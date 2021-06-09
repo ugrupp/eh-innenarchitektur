@@ -1,0 +1,14 @@
+.hero {
+  --content-width: 0;
+}
+
+.hero__slider {
+  & .swiper-slide {
+    max-width: 1440px;
+  }
+
+  & .swiper-slide-active,
+  & .swiper-slide-duplicate-active {
+    opacity: 1;
+  }
+}

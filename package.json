@@ -33,6 +33,7 @@
     "vite-plugin-imagemin": "^0.3.2"
   },
   "dependencies": {
-    "lazysizes": "^5.3.2"
+    "lazysizes": "^5.3.2",
+    "swiper": "^6.7.0"
   }
 }

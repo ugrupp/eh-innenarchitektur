@@ -27,6 +27,7 @@
 @import "./components/services.css";
 @import "./components/about.css";
 @import "./components/menu.css";
+@import "./components/hero.css";
 
 /**
  * Tailwind's utility classes and any utility classes registered by plugins.
