@@ -30,6 +30,15 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             warning: null
             width: 100
+          -
+            fieldUid: 74d08675-6b1f-460c-a449-ed5a7e232290 # Map-Link
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: Inhalt
         sortOrder: 1
 handle: footer

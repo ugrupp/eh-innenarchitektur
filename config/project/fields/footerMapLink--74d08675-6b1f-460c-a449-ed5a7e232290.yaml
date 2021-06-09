@@ -1,0 +1,14 @@
+contentColumnType: string(255)
+fieldGroup: 163d7a3b-3435-4fe0-99ed-4afd32dfd8d5 # Footer
+handle: footerMapLink
+instructions: ''
+name: Map-Link
+searchable: false
+settings:
+  maxLength: '255'
+  placeholder: null
+  types:
+    - url
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Url
