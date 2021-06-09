@@ -1,0 +1,14 @@
+enableVersioning: true
+handle: menu
+name: Menü
+propagationMethod: all
+siteSettings:
+  335a10e2-8b40-46e0-8f05-2a0883f6e52a: # EH Innenarchitektur
+    enabledByDefault: true
+    hasUrls: false
+    template: null
+    uriFormat: null
+structure:
+  maxLevels: 2
+  uid: 4dce5ba0-0fb0-45f2-87b1-4b0f4f68cdd0
+type: structure

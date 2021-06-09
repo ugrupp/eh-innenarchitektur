@@ -1,0 +1,4 @@
+.menu-level-2 {
+  box-shadow: theme("space[3]") 0 0 theme("colors.warmGray[50]"),
+    theme("space[-3]") 0 0 theme("colors.warmGray[50]");
+}

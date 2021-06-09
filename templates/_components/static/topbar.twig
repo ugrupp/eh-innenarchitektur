@@ -1,5 +1,6 @@
-<header class="fixed left-0 right-0 top-0 w-full bg-warmGray-50 h-28 lg:h-44">
+<header class="fixed z-50 left-0 right-0 top-0 w-full bg-warmGray-50 h-28 lg:h-44">
   {% embed "_components/container" with {
+    entry: entry,
     options: {
       classes: ["h-full"]
     }
@@ -7,16 +8,28 @@
     {% block content %}
       <div class="flex items-center justify-between h-full">
         {# Logo #}
-        <a href="{{ siteUrl }}" class="h-full py-5 lg:py-8 flex-shrink-0 mr-6">
+        <a href="{{ siteUrl }}" class="h-full py-5 lg:py-8 mr-4">
           <span class="sr-only">{{ siteName }}</span>
-          {{ svg("@root/assets/img/svg-sprite/logo.svg")|attr({ class: 'w-auto h-full' }) }}
+          {{ svg("@root/assets/img/svg-sprite/logo.svg")|attr({ class: 'w-auto h-full lg:transform lg:translate-y-[-3px]' }) }}
         </a>
 
         {# Menu toggle #}
-        <div class="flex-shrink-0 lg:hidden">X</div>
+        <div class="flex-shrink-0 lg:hidden">
+          <button @click="toggle()" class="block focus:outline-none focus-visible:ring-2">
+            <div class="sr-only">Menü öffnen/schließen</div>
+            {{ svg("@root/assets/img/svg-sprite/eva-hess.svg")|attr({ class: "w-10 h-10", "x-show": "!isOpen()" }) }}
+            {{ svg("@root/assets/img/svg-sprite/arrow.svg")|attr({ class: "w-10 h-10", "x-show": "isOpen()", "x-cloak": "" }) }}
+          </button>
+        </div>
 
         {# Desktop nav #}
-        <div class="flex-shrink-0 hidden lg:block">Nav</div>
+        <div class="flex-shrink-0 hidden lg:block">
+          {% include "_components/static/menu" with {
+            options: {
+              type: "desktop",
+            }
+          } %}
+        </div>
       </div>
     {% endblock %}
   {% endembed %}

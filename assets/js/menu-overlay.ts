@@ -2,7 +2,7 @@ export {};
 
 declare global {
   interface Window {
-    hero: () => {
+    menuOverlay: () => {
       show: boolean;
       open: () => void;
       close: () => void;
@@ -11,7 +11,7 @@ declare global {
   }
 }
 
-window.hero = () => ({
+window.menuOverlay = () => ({
   show: false,
   open() {
     this.show = true;
@@ -20,7 +20,7 @@ window.hero = () => ({
     this.show = false;
   },
   toggle() {
-    this.show = !this.show;
+    this.isOpen() ? this.close() : this.open();
   },
   isOpen() {
     return this.show === true;

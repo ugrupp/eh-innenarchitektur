@@ -1,6 +1,11 @@
 html,
 body {
   scroll-behavior: smooth;
+  scroll-padding-top: theme("width.28");
+
+  @screen lg {
+    scroll-padding-top: theme("width.44");
+  }
 }
 
 body {

@@ -16,4 +16,5 @@ if (staticAssets === 123456) {
 
 // Modules
 import "./lazyload";
-import "./hero";
+import "./menu-overlay";
+import "./menu";

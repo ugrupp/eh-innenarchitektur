@@ -1,0 +1,223 @@
+{% import _self as macro %}
+
+<nav class="menu menu--{{ options.type }}" x-data="menu()">
+
+  {{ macro.buildMenuLevel({
+    type: options.type,
+    items: craft.entries.section('menu').level(1),
+    level: 1,
+    id: "menu-" ~ options.type ~ "-0",
+    entry: entry,
+  }) }}
+</nav>
+
+{% macro buildMenuLevel(options) %}
+  {% import _self as macro %}
+  {% set maxLevel = 2 %}
+
+  {% set classes = {
+    1: {
+      desktop: ["flex", "space-x-12", "xl:space-x-20"],
+      mobile: [],
+      attributes: {},
+    },
+    2: {
+      desktop: ["absolute left-0 top-full bg-warmGray-50 transform-gpu menu-level-2"],
+      mobile: [],
+    }
+  } %}
+
+  {% set attributes = {
+    1: {
+      desktop: {},
+      mobile: {},
+    },
+    2: {
+      desktop: {
+        "x-show": "isActive('#{ options.id }')",
+        "x-transition:enter": "transition ease-out duration-200",
+        "x-transition:enter-start": "opacity-0 -translate-y-1",
+        "x-transition:enter-end": "opacity-100 translate-y-0",
+        "x-transition:leave": "transition ease-in duration-150",
+        "x-transition:leave-start": "opacity-100 translate-y-0",
+        "x-transition:leave-end": "opacity-0 -translate-y-1",
+      },
+      mobile: {},
+    }
+  } %}
+
+  {# Level root #}
+  <ul class="{{ classes[options.level][options.type]|join(" ") }}" data-menu-level="{{ options.level }}" id="{{ options.id }}" {{ attr(attributes[options.level][options.type]) }}>
+    {% for item in options.items.all() %}
+      {% set itemBaseClass = "menu-level" ~ options.level %}
+      {% set showSubmenu = (options.level <= maxLevel) and item.hasDescendants %}
+
+      {# Build submenu ID #}
+      {% set submenuID = showSubmenu ? (options.id ~ "-" ~ loop.index0) : false %}
+
+      {{ macro.buildMenuItem({
+        index: loop.index,
+        type: options.type,
+        item: item,
+        linkedEntry: item.menuLink.getElement() ??? null,
+        target: item.menuLink.getTarget(),
+        title: item.menuLink.getText() ??? item.title,
+        entry: options.entry,
+        level: options.level,
+        itemBaseClass: itemBaseClass,
+        showSubmenu: showSubmenu,
+        submenuID: submenuID
+      }) }}
+    {% endfor %}
+  </ul>
+{% endmacro %}
+
+{% macro buildMenuItem(options) %}
+  {# Set active flag #}
+  {% set isActive = false %}
+  {% if options.linkedEntry %}
+    {% set pageIsCurrent = (options.linkedEntry.id == options.entry.id) %}
+    {% set pageIsTopParent = (craft.app.request.segments|first == options.linkedEntry.uri) %}
+    {# ^ = start of string, prevents mid-url matches. {} = custom delimiters, since / doesn't play well with URLs. #}
+    {% set pageIsInPath = (options.entry.uri matches '{^' ~ options.linkedEntry.uri ~ '}') %}
+
+    {% set isActive = pageIsCurrent or pageIsTopParent or pageIsInPath %}
+  {% endif %}
+
+  {% set classes = {
+    1: {
+      item: {
+        desktop: {
+          default: ["relative"],
+          active: [],
+        },
+        mobile: {
+          default: ["pb-5"],
+          active: [],
+        }
+      },
+      linkWrapper: {
+        desktop: {
+          default: [],
+        },
+        mobile: {
+          default: [],
+        }
+      },
+      link: {
+        desktop: {
+          default: ["whitespace-nowrap transition-colors hover:text-red-600 focus:text-red-600"],
+        },
+        mobile: {
+          default: ["whitespace-nowrap"],
+        }
+      },
+      title: {
+        desktop: {
+          default: ["text-xl"],
+        },
+        mobile: {
+          default: ["text-xl"],
+        }
+      }
+    },
+    2: {
+      item: {
+        desktop: {
+          default: ["my-3"],
+          active: [],
+        },
+        mobile: {
+          default: ["my-4"],
+          active: [],
+        }
+      },
+      linkWrapper: {
+        desktop: {
+          default: [],
+        },
+        mobile: {
+          default: [],
+        }
+      },
+      link: {
+        desktop: {
+          default: ["whitespace-nowrap transition-colors hover:text-red-600 focus:text-red-600"],
+        },
+        mobile: {
+          default: ["whitespace-nowrap"],
+        }
+      },
+      counter: {
+        desktop: {
+          default: ["text-[8px] font-mono tracking-normal font-normal align-text-top text-red-600 mr-1"],
+        },
+        mobile: {
+          default: ["text-[8px] font-mono tracking-normal font-normal align-text-top text-red-600 mr-1"],
+        }
+      },
+      title: {
+        desktop: {
+          default: ["text-base font-mono tracking-normal font-normal"],
+        },
+        mobile: {
+          default: ["text-base font-mono tracking-normal font-normal"],
+        }
+      }
+    }
+  } %}
+
+  {% set attributes = {
+    1: {
+      desktop: {
+        "@mouseenter": "activate('#{ options.submenuID }')",
+        "@mouseleave": "deactivate()",
+      },
+      mobile: {},
+    },
+    2: {
+      desktop: {},
+      mobile: {},
+    }
+  } %}
+
+  {# Item #}
+  <li class="{{ classes[options.level].item[options.type].default|join(" ") }}{% if isActive %} {{ classes[options.level].item[options.type].active|join(" ") }}{% endif %}"
+    data-menu-item="{{ options.level }}"
+    {{ attr(attributes[options.level][options.type]) }}>
+    {# Link wrapper #}
+    <div class="{{ classes[options.level].linkWrapper[options.type].default|join(" ") }}">
+      {# Link #}
+      <a href="{{ options.item.menuLink.getUrl() ??? options.linkedEntry.url ??? '#' }}"
+        {% if options.target %}target="{{ options.target }}"{% endif %}
+        class="{{ classes[options.level].link[options.type].default|join(" ") }}"
+        :class="{'text-red-600': isActive('{{ options.submenuID }}')}"
+        data-menu-link="{{ options.level }}"
+        @click="$dispatch('close-menu-overlay')"
+      >
+        {# Counter #}
+        {% if options.level == 2 %}
+          <span class="{{ classes[options.level].counter[options.type].default|join(" ") }}">
+            {{ "%02d"|format(options.index) }}
+          </span>
+        {% endif %}
+
+        {# Title #}
+        <strong class="{{ classes[options.level].title[options.type].default|join(" ") }}">
+          {{ options.title }}
+        </strong>
+      </a>
+    </div>
+
+    {# Submenu #}
+    {% if options.showSubmenu %}
+      {{ macro.buildMenuLevel({
+        type: options.type,
+        items: options.item.children,
+        level: options.level + 1,
+        id: options.submenuID,
+        entry: options.entry,
+      }) }}
+    {% endif %}
+  </li>
+{% endmacro %}

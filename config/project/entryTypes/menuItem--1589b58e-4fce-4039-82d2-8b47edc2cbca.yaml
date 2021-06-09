@@ -1,0 +1,47 @@
+fieldLayouts:
+  0044abf0-25d0-489d-a71b-ac893cb7f33e:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\EntryTitleField
+            warning: null
+            width: 100
+          -
+            fieldUid: 268b1051-db1a-4ed1-903d-ffe1ac06faef # Menu-Link
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Inhalt
+        sortOrder: 1
+handle: menuItem
+hasTitleField: false
+name: Menü-Item
+section: 745e1913-3abf-44ac-9ac1-ab0b5d4b68f2 # Menü
+sortOrder: 1
+titleFormat: '{menuLink.getText()}'
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

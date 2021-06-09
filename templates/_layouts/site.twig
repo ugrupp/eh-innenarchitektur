@@ -28,7 +28,13 @@
 
   <div id="start">
     {# Topbar & menu overlay #}
-    {% include "_components/static/topbar" %}
+    <div
+      x-data="menuOverlay()"
+      @close-menu-overlay.window="close()"
+      @keydown.window.escape="close()">
+      {% include "_components/static/topbar" %}
+      {% include "_components/static/overlay-menu" %}
+    </div>
 
     {# Main #}
     <main id="main" class="pt-28 lg:pt-44">
