@@ -34,4 +34,7 @@ return [
 
     // Whether crawlers should be allowed to index pages and following links
     'disallowRobots' => !$isProd,
+
+    // Whether images should be upscaled if the provided transform size is larger than the image
+    'upscaleImages' => false,
 ];

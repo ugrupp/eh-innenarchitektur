@@ -12,6 +12,24 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             warning: null
             width: 100
+          -
+            fieldUid: 9ae8736f-64b4-4555-9161-2b45e1a6dad8 # Adresse
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 2912fb8f-0022-4bf9-9a06-3576f887a666 # Map
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: Inhalt
         sortOrder: 1
 handle: footer

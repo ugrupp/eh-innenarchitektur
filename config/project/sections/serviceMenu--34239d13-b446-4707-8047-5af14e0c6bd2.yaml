@@ -1,0 +1,14 @@
+enableVersioning: true
+handle: serviceMenu
+name: Service-Menü
+propagationMethod: all
+siteSettings:
+  335a10e2-8b40-46e0-8f05-2a0883f6e52a: # EH Innenarchitektur
+    enabledByDefault: true
+    hasUrls: false
+    template: null
+    uriFormat: null
+structure:
+  maxLevels: 1
+  uid: 18b347b0-720e-4f09-9a55-e4807f553ab6
+type: structure

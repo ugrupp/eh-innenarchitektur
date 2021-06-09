@@ -1,0 +1,20 @@
+.footer__address {
+  & strong {
+    @apply text-red-600;
+  }
+
+  & address,
+  & p {
+    @apply text-lg my-4;
+    @apply sm:my-6 sm:text-xl;
+  }
+
+  & a {
+    color: currentColor;
+
+    &:hover,
+    &:focus {
+      @apply text-red-600;
+    }
+  }
+}
