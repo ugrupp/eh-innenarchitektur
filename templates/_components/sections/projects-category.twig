@@ -61,7 +61,6 @@
           ],
         ] %}
 
-        {# TODO: adjust top spacing #}
         <div class="grid grid-cols-12 sm:mt-4 md:mt-20 lg:mt-36">
           {% for project in projects %}
             {% set gridItemClasses = gridItemConfig[loop.index0 % 6] ?? [] %}
@@ -85,9 +84,9 @@
                 {% endif %}
 
                 {# CTA #}
-                <p class="headline--h6 flex items-center space-x-5 mt-5 2xl:absolute 2xl:left-0 2xl:top-full transition-transform duration-300 transform-gpu lg:group-hover:translate-x-2">
+                <p class="headline--h6 uppercase flex items-center space-x-3 sm:space-x-5 mt-5 2xl:absolute 2xl:left-0 2xl:top-full transition-transform duration-300 transform-gpu lg:group-hover:translate-x-2">
                   <span>Zum Projekt</span>
-                  {{ svg("@root/assets/img/svg-sprite/arrow.svg")|attr({ class: 'w-6 h-6 sm:w-7 sm:h-7 flex-shrink-0' }) }}
+                  {{ svg("@root/assets/img/svg-sprite/arrow-opaque.svg")|attr({ class: 'w-6 h-6 sm:w-7 sm:h-7 flex-shrink-0' }) }}
                 </p>
               </a>
             {% endset %}

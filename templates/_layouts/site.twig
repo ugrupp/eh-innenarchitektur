@@ -27,14 +27,8 @@
   <a href="#menu" class="sr-only">{{ 'Jump to Navigation'|t }}</a>
 
   <div id="start">
-    {# Topbar & menu overlay #}
-    <div
-      x-data="menuOverlay()"
-      @close-menu-overlay.window="close()"
-      @keydown.window.escape="close()">
-      {% include "_components/static/topbar" %}
-      {% include "_components/static/overlay-menu" %}
-    </div>
+    {# Topbar #}
+    {% block topbar %}{% endblock %}
 
     {# Main #}
     <main id="main" class="pt-28 lg:pt-44">

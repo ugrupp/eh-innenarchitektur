@@ -1,0 +1,20 @@
+<header class="absolute z-50 left-0 right-0 top-0 w-full bg-warmGray-50 h-28 lg:h-44">
+  {% embed "_components/container" with {
+    entry: entry,
+    options: {
+      classes: ["h-full"]
+    }
+  } only %}
+    {% block content %}
+      <div class="flex items-center justify-between h-full">
+        {# Back link #}
+        <div class="flex-shrink-0">
+          <a href="javascript:history.back();" class="headline--h6 uppercase flex items-center space-x-3 sm:space-x-5 transition duration-300 text-red-600 hover:text-red-400">
+            {{ svg("@root/assets/img/svg-sprite/arrow-opaque.svg")|attr({ class: "w-6 h-6 sm:w-7 sm:h-7 flex-shrink-0 transform rotate-180" }) }}
+            <span>Zurück</spoan>
+          </a>
+        </div>
+      </div>
+    {% endblock %}
+  {% endembed %}
+</header>

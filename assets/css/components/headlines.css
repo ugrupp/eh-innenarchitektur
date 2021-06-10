@@ -21,6 +21,6 @@
   }
 
   .headline--h6 {
-    @apply text-xs sm:text-sm uppercase font-mono font-normal tracking-normal leading-tight;
+    @apply text-xs sm:text-sm font-mono font-normal tracking-normal leading-tight;
   }
 }

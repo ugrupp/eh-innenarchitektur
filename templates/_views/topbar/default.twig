@@ -1,0 +1,8 @@
+{# Topbar & menu overlay #}
+<div
+  x-data="menuOverlay()"
+  @close-menu-overlay.window="close()"
+  @keydown.window.escape="close()">
+  {% include "_components/static/topbar" %}
+  {% include "_components/static/overlay-menu" %}
+</div>

@@ -145,10 +145,10 @@
         })%}
         {% set serviceContent %}
           {{ renderServiceMenuList(entry, {
-            itemClasses: ["headline--h6 mb-2"],
+            itemClasses: ["headline--h6 uppercase mb-2"],
             linkClasses: ["transition-colors text-white text-opacity-25 hover:text-opacity-100"]
           }) }}
-          <p class="headline--h6">Eine Website von <a href="https://www.formatformat.de" target="_blank" class="lowercase transition-colors text-white text-opacity-25 hover:text-opacity-100">formatformat.de</a></p>
+          <p class="headline--h6 uppercase">Eine Website von <a href="https://www.formatformat.de" target="_blank" class="lowercase transition-colors text-white text-opacity-25 hover:text-opacity-100">formatformat.de</a></p>
         {% endset %}
         {{ service|append(serviceContent) }}
       </div>

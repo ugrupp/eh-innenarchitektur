@@ -1,0 +1,7 @@
+{%- include [
+  '_views/topbar/' ~ baseSegmentRoute ?? null,
+  '_views/topbar/' ~ entry.section.handle|kebab ~ '/' ~ entry.type.handle|kebab,
+  '_views/topbar/' ~ entry.section.handle|kebab ~ '/default',
+  '_views/topbar/' ~ entry.section.handle|kebab,
+  '_views/topbar/default',
+] -%}

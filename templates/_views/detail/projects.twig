@@ -1,0 +1,158 @@
+{% extends "_views/detail/default" %}
+
+{% set projectCategory = entry.projectCategory.one() %}
+
+{% block view_article %}
+  <div class="bg-warmGray-50 pb-32 lg:pb-56 project">
+    {% embed "_components/container" with {
+      projectCategory: projectCategory,
+      entry: entry,
+    } only %}
+      {% block content %}
+        <div class="grid grid-cols-12">
+          {# Lead #}
+          {% set lead = tag("div", {
+            class: [
+              "col-start-1 col-span-10",
+              "md:col-start-1 md:col-span-7",
+              "lg:row-start-1 lg:col-start-1 lg:col-span-5",
+              "xl:col-start-1 xl:col-span-4",
+            ],
+          })%}
+          {% set leadContent %}
+            {# Category #}
+            {% if projectCategory %}
+              <p class="headline--h6 text-red-600 mb-2.5">{{ projectCategory.title }}</p>
+            {% endif %}
+
+            {# Title #}
+            <h1 class="headline--h2">{{ entry.title }}</h1>
+          {% endset %}
+          {{ lead|append(leadContent) }}
+
+
+          {# Big slider #}
+          {# TODO: check no-images case #}
+          {% set slider1Images = entry.projectSlider.all() %}
+          {% if slider1Images|length %}
+            {% set slider1 = tag("div", {
+              class: [
+                "col-start-1 col-span-12 mt-10 -ml-5",
+                "sm:-ml-10",
+                "md:col-start-1 md:col-span-9 md:mt-20 md:ml-0",
+                "lg:row-start-2 lg:col-start-1 lg:col-span-7",
+              ],
+            })%}
+            {% set slider1Content %}
+              {% include "_components/image" with {
+                options: {
+                  image: slider1Images[0],
+                  wrapperClasses: ["bg-gray-100 rounded-xl"]
+                }
+              } %}
+            {% endset %}
+            {{ slider1|append(slider1Content) }}
+          {% endif %}
+
+
+          {# Main project image #}
+          {% set projectImage = entry.projectImage.one() %}
+          {% set projectImageWrapper = tag("div", {
+            class: [
+              "col-start-1 col-span-10 mt-10",
+              "sm:col-start-1 sm:col-span-6",
+              "md:col-start-7 md:col-span-6",
+              "lg:row-start-3 lg:col-start-9 lg:col-span-4 lg:-mt-36",
+            ],
+          })%}
+          {% set projectImageContent %}
+            {% if projectImage|length %}
+              {% include "_components/image" with {
+                options: {
+                  image: projectImage,
+                  wrapperClasses: ["bg-gray-100 rounded-xl"]
+                }
+              } %}
+            {% endif %}
+          {% endset %}
+          {{ projectImageWrapper|append(projectImageContent) }}
+
+
+          {# Body 1 #}
+          {% set body1 = tag("div", {
+            class: [
+              "col-start-3 col-span-10 my-16",
+              "md:col-start-3 md:col-span-7 md:my-24",
+              "lg:row-start-3 lg:col-start-3 lg:col-span-5 lg:my-36",
+              "xl:col-start-4 xl:col-span-4",
+            ],
+          })%}
+          {% set body1Content %}
+            {% embed "_components/text" with {
+              entry: entry,
+              options: {
+                classes: ["project__body"],
+              }
+            } only %}
+              {% block content entry.projectBody %}
+            {% endembed %}
+          {% endset %}
+          {{ body1|append(body1Content) }}
+
+
+          {# Small slider #}
+          {% set slider2Images = entry.projectSlider2.all() %}
+          {% if slider2Images|length %}
+            {% set slider2 = tag("div", {
+              class: [
+                "col-start-1 col-span-10 mb-16",
+                "md:col-start-1 md:col-span-7 md:mb-24",
+                "lg:col-start-1 lg:col-span-5 lg:mb-36",
+                "xl:col-start-1 xl:col-span-4",
+              ],
+            })%}
+            {% set slider2Content %}
+              {# Small headline #}
+              {% if entry.projectSlider2Headline|length %}
+                <h2 class="headline--h6 uppercase text-red-600 mb-3">{{ entry.projectSlider2Headline }}</h2>
+              {% endif %}
+
+              {# Slider #}
+              {% include "_components/image" with {
+                options: {
+                  image: slider2Images[0],
+                  wrapperClasses: ["bg-gray-100 rounded-xl"]
+                }
+              } %}
+            {% endset %}
+            {{ slider2|append(slider2Content) }}
+          {% endif %}
+
+
+          {# Body 2 #}
+          {% if entry.projectBody2|length %}
+            {% set body2 = tag("div", {
+              class: [
+                "col-start-3 col-span-10",
+                "md:col-start-3 md:col-span-7",
+                "lg:col-start-3 lg:col-span-5",
+                "xl:col-start-4 xl:col-span-4",
+              ],
+            })%}
+            {% set body2Content %}
+              {% embed "_components/text" with {
+                entry: entry,
+                options: {
+                  classes: ["project__body"],
+                },
+              } only %}
+                {% block content entry.projectBody2 %}
+              {% endembed %}
+            {% endset %}
+            {{ body2|append(body2Content) }}
+          {% endif %}
+        </div>
+      {% endblock %}
+    {% endembed %}
+  </div>
+{% endblock %}

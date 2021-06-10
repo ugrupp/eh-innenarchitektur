@@ -49,12 +49,20 @@
   & .headline--h5 {
     @apply mt-4 mb-2;
     @apply sm:mt-6;
+
+    & + :is(p, address) {
+      margin-top: 0;
+    }
   }
 
   & h6,
   & .headline--h6 {
     @apply mt-4 mb-2;
     @apply sm:mt-6;
+
+    & + :is(p, address) {
+      margin-top: 0;
+    }
   }
 
   /* Lists */
