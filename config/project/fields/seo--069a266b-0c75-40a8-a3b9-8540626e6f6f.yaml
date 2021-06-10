@@ -38,7 +38,7 @@ settings:
           - '0'
         -
           - template
-          - ' - {{ siteName }}'
+          - ' – {{ siteName }}'
   titleSuffix: null
 translationKeyFormat: null
 translationMethod: none

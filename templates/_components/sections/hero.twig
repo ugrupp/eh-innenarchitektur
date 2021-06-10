@@ -6,9 +6,13 @@
 
 <section class="hero relative mb-32 lg:mb-44" id="hero">
   {# Container sentinel & controls #}
-  {% embed "_components/container" only %}
-    {% block content %}
-      <div class="hero__container-sentinel relative" data-hero-container-sentinel>
+  {% if options.slides|length > 1 %}
+    {% embed "_components/container" with {
+      topOptions: options,
+    } only %}
+      {% block content %}
+        <div class="hero__container-sentinel relative" data-hero-container-sentinel>
+
         {# Controls #}
         <div class="absolute top-[202px] lg:top-[300px] xl:top-[360px] z-20 right-0 transform -translate-y-1/2 translate-x-1/4 2xl:translate-x-1/2 space-y-4 flex flex-col lg:space-y-5">
           <button href="javascript:void(0);" class="focus:outline-none focus-visible:ring-2 transition-transform duration-300 transform-gpu hover:translate-x-2 hover:scale-[1.03]" data-hero-slider-next>
@@ -20,31 +24,47 @@
             <span class="sr-only">Rückwärts</span>
           </button>
         </div>
+        </div>
+      {% endblock %}
+    {% endembed %}
+  {% endif %}
+
+  {# Slider #}
+  {% set containerOptions = {} %}
+  {% if options.slides|length > 1 %}
+    {% set containerOptions = containerOptions|merge({
+      padding: "",
+      maxW: ""
+    }) %}
+  {% endif %}
+
+  {% embed "_components/container" with {
+    topOptions: options,
+    options: containerOptions
+  } only %}
+    {% block content %}
+      <div class="swiper-container hero__slider h-[404px] lg:h-[600px] xl:h-[720px]" data-hero-slider>
+        {# Slides #}
+        <div class="swiper-wrapper">
+          {% for slide in topOptions.slides %}
+            {% set image = slide.image[0] ?? null %}
+            {% if image %}
+              <div class="swiper-slide !transition !duration-500{% if topOptions.slides|length > 1 %} opacity-20{% endif %}">
+                {% include "_components/image" with {
+                  options: {
+                    image: image,
+                    wrapperClasses: ["bg-gray-100 rounded-xl lg:rounded-2xl h-full"],
+                    pictureClasses: ["h-full"],
+                    imageClasses: ["h-full object-cover"],
+                  }
+                } %}
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
       </div>
     {% endblock %}
   {% endembed %}
-
-  {# Slider #}
-  <div class="swiper-container hero__slider h-[404px] lg:h-[600px] xl:h-[720px]" data-hero-slider>
-    {# Slides #}
-    <div class="swiper-wrapper">
-      {% for slide in options.slides %}
-        {% set image = slide.image[0] ?? null %}
-        {% if image %}
-          <div class="swiper-slide !transition !duration-500 opacity-20">
-            {% include "_components/image" with {
-              options: {
-                image: image,
-                wrapperClasses: ["bg-gray-100 rounded-xl lg:rounded-2xl h-full"],
-                pictureClasses: ["h-full"],
-                imageClasses: ["h-full object-cover"],
-              }
-            } %}
-          </div>
-        {% endif %}
-      {% endfor %}
-    </div>
-  </div>
 
   {# Pagination #}
   {% embed "_components/container" only %}

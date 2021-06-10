@@ -3,3 +3,16 @@
     @apply text-red-600;
   }
 }
+
+.project-slider {
+  clip-path: inset(0 round theme("width.3"));
+
+  @screen lg {
+    clip-path: inset(0 round theme("width.4"));
+  }
+
+  & .swiper-slide-active,
+  & .swiper-slide-duplicate-active {
+    opacity: 1;
+  }
+}

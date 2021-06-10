@@ -1,0 +1,40 @@
+{% set defaults = {
+  slides: [],
+} %}
+
+{% set options = options is defined ? defaults|merge(options) : defaults %}
+
+{# Slider #}
+<div class="relative{% if options.slides|length > 1 %} mr-5 lg:mr-0{% endif %}">
+
+  <div class="swiper-container project-slider" data-project-slider>
+    {# Slides #}
+    <div class="swiper-wrapper">
+      {% for image in options.slides %}
+        <div class="swiper-slide !transition !duration-500{% if options.slides|length > 1 %} opacity-20{% endif %}">
+          {% include "_components/image" with {
+            options: {
+              image: image,
+              wrapperClasses: ["bg-gray-100 rounded-xl lg:rounded-2xl"],
+              imageClasses: ["w-full"],
+            }
+          } %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  {# Controls #}
+  {% if options.slides|length > 1 %}
+    <div class="absolute top-1/2 z-20 right-0 transform -translate-y-1/2 translate-x-1/2 space-y-2.5 flex flex-col lg:space-y-5">
+      <button href="javascript:void(0);" class="focus:outline-none focus-visible:ring-2 transition-transform duration-300 transform-gpu hover:translate-x-2 hover:scale-[1.03]" data-project-slider-next>
+        {{ svg("@root/assets/img/svg-sprite/arrow.svg")|attr({ class: 'text-red-600 w-10 h-10 lg:w-20 lg:h-20' }) }}
+        <span class="sr-only">Vorwärts</span>
+      </button>
+      <button href="javascript:void(0);" class="focus:outline-none focus-visible:ring-2 transition-transform duration-300 transform-gpu hover:-translate-x-2 hover:scale-[1.03]" data-project-slider-prev>
+        {{ svg("@root/assets/img/svg-sprite/arrow.svg")|attr({ class: 'text-red-600 w-10 h-10 lg:w-20 lg:h-20 transform rotate-180' }) }}
+        <span class="sr-only">Rückwärts</span>
+      </button>
+    </div>
+  {% endif %}
+</div>

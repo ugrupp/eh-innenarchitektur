@@ -1,7 +1,3 @@
-.hero {
-  --content-width: 0;
-}
-
 .hero__slider {
   & .swiper-slide {
     max-width: 1440px;

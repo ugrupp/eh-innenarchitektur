@@ -19,3 +19,4 @@ import "./lazyload";
 import "./menu-overlay";
 import "./menu";
 import "./hero";
+import "./project-slider";

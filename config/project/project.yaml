@@ -1,4 +1,4 @@
-dateModified: 1623327741
+dateModified: 1623363810
 email:
   fromEmail: urs@21sieben.de
   fromName: 'Craft Starter 2021'
@@ -145,7 +145,7 @@ plugins:
               - '0'
             -
               - template
-              - ' - {{ siteName }}'
+              - ' – {{ siteName }}'
       titleSuffix: null
       twitterHandle: ''
   typedlinkfield:

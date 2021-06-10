@@ -32,7 +32,6 @@
 
 
           {# Big slider #}
-          {# TODO: check no-images case #}
           {% set slider1Images = entry.projectSlider.all() %}
           {% if slider1Images|length %}
             {% set slider1 = tag("div", {
@@ -44,10 +43,9 @@
               ],
             })%}
             {% set slider1Content %}
-              {% include "_components/image" with {
+              {% include "_components/project-slider" with {
                 options: {
-                  image: slider1Images[0],
-                  wrapperClasses: ["bg-gray-100 rounded-xl"]
+                  slides: slider1Images,
                 }
               } %}
             {% endset %}
@@ -62,8 +60,8 @@
               "col-start-1 col-span-10 mt-10",
               "sm:col-start-1 sm:col-span-6",
               "md:col-start-7 md:col-span-6",
-              "lg:row-start-3 lg:col-start-9 lg:col-span-4 lg:-mt-36",
-            ],
+              "lg:row-start-3 lg:col-start-9 lg:col-span-4",
+            ]|merge(slider1Images|length ? ["lg:-mt-36"] : []),
           })%}
           {% set projectImageContent %}
             {% if projectImage|length %}
@@ -118,10 +116,9 @@
               {% endif %}
 
               {# Slider #}
-              {% include "_components/image" with {
+              {% include "_components/project-slider" with {
                 options: {
-                  image: slider2Images[0],
-                  wrapperClasses: ["bg-gray-100 rounded-xl"]
+                  slides: slider2Images,
                 }
               } %}
             {% endset %}
