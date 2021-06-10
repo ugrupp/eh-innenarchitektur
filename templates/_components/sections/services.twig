@@ -6,9 +6,6 @@
 
 {% set options = options is defined ? defaults|merge(options) : defaults %}
 
-{# TODO:
-* font-size lists (text-lg, sm:text-xl)
-#}
 <section id="leistungen" class="services bg-warmGray-600 text-white pt-28 sm:pt-32 lg:pt-40 xl:pt-56 pb-56 xl:pb-80">
   {% embed "_components/container" with {
     topOptions: options,

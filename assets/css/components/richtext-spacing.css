@@ -86,6 +86,13 @@
     }
   }
 
+  & ul.highlight-list li {
+    &:not(:last-of-type) {
+      @apply mb-3;
+      @apply sm:mb-5;
+    }
+  }
+
   /* General */
   &:not(.richtext--keep-top-spacing) > :first-child {
     margin-top: 0;
