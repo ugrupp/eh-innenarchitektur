@@ -105,11 +105,11 @@
 }
 
 /* Special cases */
-.pages .richtext h3 {
+:is(.impressum, .datenschutz) .richtext h3 {
   @apply text-red-600;
 }
 
-.pages .richtext a {
+:is(.impressum, .datenschutz) .richtext a {
   color: currentColor;
 
   &:hover,

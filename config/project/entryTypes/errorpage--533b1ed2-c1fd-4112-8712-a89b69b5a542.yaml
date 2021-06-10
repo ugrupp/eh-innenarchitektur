@@ -1,0 +1,38 @@
+fieldLayouts:
+  0ecaa56b-2f87-4d45-a735-183b0b1a9b22:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\EntryTitleField
+            warning: null
+            width: 100
+        name: Inhalt
+        sortOrder: 1
+handle: errorpage
+hasTitleField: true
+name: Fehlerseite
+section: c444e3ce-763f-4fba-b6dc-743ff70d6475 # Fehlerseite
+sortOrder: 1
+titleFormat: '{section.name|raw}'
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

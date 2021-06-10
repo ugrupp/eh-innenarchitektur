@@ -1,0 +1,11 @@
+enableVersioning: true
+handle: errorpage
+name: Fehlerseite
+propagationMethod: all
+siteSettings:
+  335a10e2-8b40-46e0-8f05-2a0883f6e52a: # EH Innenarchitektur
+    enabledByDefault: true
+    hasUrls: true
+    template: _routers/page
+    uriFormat: '404'
+type: single
