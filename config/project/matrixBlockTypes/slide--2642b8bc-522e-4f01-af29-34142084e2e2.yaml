@@ -1,0 +1,55 @@
+field: ae390759-b82f-49ab-bc1e-3b303024b39e # Slider
+fieldLayouts:
+  cd588136-a9fa-45de-8caa-ac1e6120554f:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: c6512dec-f5c3-46cc-b9eb-3151e8711ba9 # Bild
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  c6512dec-f5c3-46cc-b9eb-3151e8711ba9: # Bild
+    contentColumnType: string
+    fieldGroup: null
+    handle: image
+    instructions: ''
+    name: Bild
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      allowUploads: true
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:1441d23a-77fd-4cb1-9e07-7deda2c44aca' # Bilder
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      previewMode: full
+      restrictFiles: '1'
+      selectionLabel: 'Bild auswählen'
+      showSiteMenu: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      singleUploadLocationSource: 'volume:1441d23a-77fd-4cb1-9e07-7deda2c44aca' # Bilder
+      singleUploadLocationSubpath: ''
+      source: null
+      sources:
+        - 'volume:1441d23a-77fd-4cb1-9e07-7deda2c44aca' # Bilder
+      targetSiteId: null
+      useSingleFolder: false
+      validateRelatedElements: false
+      viewMode: large
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+handle: slide
+name: Slide
+sortOrder: 1

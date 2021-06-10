@@ -1,0 +1,23 @@
+contentColumnType: string
+fieldGroup: 73486341-6e47-4943-95ab-1c8bc49e345f # Projekte
+handle: projectCategory
+instructions: ''
+name: Projektkategorie
+searchable: true
+settings:
+  allowLimit: false
+  allowMultipleSources: false
+  allowSelfRelations: false
+  branchLimit: '1'
+  limit: null
+  localizeRelations: false
+  selectionLabel: 'Kategorie auswählen'
+  showSiteMenu: true
+  source: 'group:5f0eee9f-25ed-480d-a5ee-9ce6bea7ecf5' # Projektkategorien
+  sources: '*'
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Categories

@@ -1,10 +1,10 @@
 html,
 body {
   scroll-behavior: smooth;
-  scroll-padding-top: theme("width.28");
+  scroll-padding-top: calc(theme("width.28") - 1px);
 
   @screen lg {
-    scroll-padding-top: theme("width.44");
+    scroll-padding-top: calc(theme("width.44") - 1px);
   }
 }
 

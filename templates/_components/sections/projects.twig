@@ -1,0 +1,27 @@
+{% set projects = craft.entries
+  .section("projects")
+  .with(["projectImage", "projectCategory"])
+  .all()
+%}
+
+{# Extract categories from projects #}
+{% set projectCategories = {} %}
+{% for project in projects %}
+  {% set projectCategory = project.projectCategory[0] %}
+  {% set projectCategories = projectCategories|merge({(projectCategory.slug): projectCategory}) %}
+{% endfor %}
+
+{# Group projects by category #}
+{% set projectsByCategory = projects|group(project => project.projectCategory[0].slug) %}
+
+<div id="projekte">
+  {% for projectCategorySlug, projectsInCategory in projectsByCategory %}
+    {% include "_components/sections/projects-category" with {
+      options: {
+        category: projectCategories[projectCategorySlug],
+        projects: projectsInCategory,
+        index: loop.index,
+      }
+    } only %}
+  {% endfor %}
+</div>

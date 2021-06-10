@@ -1,0 +1,100 @@
+{% set defaults = {
+  category: null,
+  projects: [],
+  index: "",
+} %}
+
+{% set options = options is defined ? defaults|merge(options) : defaults %}
+
+{% if options.projects|length and options.category %}
+  <section id="{{ options.category.slug }}" class="bg-gradient-to-b from-warmGray-50 to-white py-20 sm:py-28 lg:py-36 2xl:pb-48">
+    {% embed "_components/container" with {
+      projects: options.projects,
+      topOptions: options,
+    } only %}
+      {% block content %}
+        {# Title #}
+        <div class="flex">
+          <span class="text-red-600 headline--h6 w-12 md:w-24 flex-shrink-0">{{ "%02d"|format(topOptions.index) }}</span>
+          <h2 class="headline--h1 font-mono tracking-normal font-normal">{{ topOptions.category.title }}</h2>
+        </div>
+
+        {# Grid #}
+        {% set gridItemConfig = [
+          [
+            "max-w-[400px] col-start-1 col-span-10 mt-16",
+            "sm:col-start-1 sm:col-span-7",
+            "md:self-end md:col-start-1 md:col-span-5 md:mt-0",
+            "xl:col-start-1 xl:col-span-4"
+          ],
+          [
+            "max-w-[400px] col-start-3 col-span-10 mt-16",
+            "sm:col-start-3 sm:col-span-7",
+            "md:self-end md:col-start-8 md:col-span-5 md:ml-auto md:-mt-32",
+            "xl:col-start-9 xl:col-span-4"
+          ],
+          [
+            "max-w-[400px] col-start-1 col-span-10 mt-16",
+            "sm:col-start-1 sm:col-span-7",
+            "md:col-start-4 md:col-span-6 md:mx-auto md:my-16",
+            "xl:col-start-4 xl:col-span-6",
+            "2xl:my-0"
+          ],
+          [
+            "max-w-[400px] col-start-3 col-span-10 mt-16",
+            "sm:col-start-3 sm:col-span-7",
+            "md:self-end md:col-start-1 md:col-span-5 md:mt-0",
+            "xl:col-start-1 xl:col-span-4"
+          ],
+          [
+            "max-w-[400px] col-start-1 col-span-10 mt-16",
+            "sm:col-start-1 sm:col-span-7",
+            "md:self-end md:col-start-8 md:col-span-5 md:ml-auto md:-mt-32",
+            "xl:col-start-9 xl:col-span-4"
+          ],
+          [
+            "max-w-[400px] col-start-3 col-span-10 mt-16",
+            "sm:col-start-3 sm:col-span-7",
+            "md:col-start-4 md:col-span-6 md:mx-auto md:my-16",
+            "xl:col-start-4 xl:col-span-6",
+            "2xl:my-0"
+          ],
+        ] %}
+
+        {# TODO: adjust top spacing #}
+        <div class="grid grid-cols-12 sm:mt-4 md:mt-20 lg:mt-36">
+          {% for project in projects %}
+            {% set gridItemClasses = gridItemConfig[loop.index0 % 6] ?? [] %}
+
+            {# Grid item #}
+            {% set projectWrapper = tag("div", {
+              class: gridItemClasses,
+              style: "grid-row-start: #{ loop.index }"
+            })%}
+            {% set projectWrapperContent %}
+              <a href="{{ project.url }}" class="block relative transition duration-300 text-red-600 hover:text-red-400 transform-gpu lg:hover:scale-105 group">
+                {# Image #}
+                {% set image = project.projectImage[0] ?? null %}
+                {% if image %}
+                  {% include "_components/image" with {
+                    options: {
+                      image: image,
+                      wrapperClasses: ["bg-gray-100 rounded-xl"]
+                    }
+                  } %}
+                {% endif %}
+
+                {# CTA #}
+                <p class="headline--h6 flex items-center space-x-5 mt-5 2xl:absolute 2xl:left-0 2xl:top-full transition-transform duration-300 transform-gpu lg:group-hover:translate-x-2">
+                  <span>Zum Projekt</span>
+                  {{ svg("@root/assets/img/svg-sprite/arrow.svg")|attr({ class: 'w-6 h-6 sm:w-7 sm:h-7 flex-shrink-0' }) }}
+                </p>
+              </a>
+            {% endset %}
+            {{ projectWrapper|append(projectWrapperContent) }}
+          {% endfor %}
+        </div>
+      {% endblock %}
+    {% endembed %}
+  </section>
+{% endif %}
