@@ -4,14 +4,14 @@ namespace Deployer;
 require 'recipe/common.php';
 
 // Project name
-set('application', 'craft-starter-2021');
+set('application', 'eh-innenarchitektur');
 
 // Project repository
-set('repository', 'git@github.com:ugrupp/craft-starter-2021.git');
+set('repository', 'git@github.com:ugrupp/eh-innenarchitektur.git');
 
-// Override php and composer binaries for plesk
-// set('bin/composer', '/opt/plesk/php/7.4/bin/php /usr/lib/plesk-9.0/composer.phar');
-// set('bin/php', '/opt/plesk/php/7.4/bin/php');
+// Override php and composer binaries
+set('bin/composer', '/usr/bin/php7.4-cli ~/composer.phar');
+set('bin/php', '/usr/bin/php7.4-cli');
 
 // Shared files/dirs between deploys
 set('shared_files', [
@@ -53,21 +53,21 @@ set('writable_dirs', [
 set('writable_mode', 'chmod');
 set('allow_anonymous_stats', false);
 
-// Only keep 3 releases
-set('keep_releases', 3);
+// Only keep 2 releases
+set('keep_releases', 2);
 
 // [Optional] Allocate tty for git clone. Default value is false.
 set('git_tty', false);
 
 
 // Set the default deploy environment to staging
-set('default_stage', 'staging');
+set('default_stage', 'production');
 
 // Hosts
-host('staging')
-    ->hostname('craft-starter-2021')
-    ->stage('staging')
-    ->set('deploy_path', '/var/www/virtual/ugrupp/craft-starter-2021');
+host('production')
+    ->hostname('eh')
+    ->stage('production')
+    ->set('deploy_path', '~/relaunch2021/production');
 
 // Tasks
 desc('Execute migrations');

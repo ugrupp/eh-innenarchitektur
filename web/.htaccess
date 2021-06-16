@@ -25,6 +25,20 @@
 
     ### -> redirects ###
 
+    # redirect http -> https (staging)
+    RewriteCond %{HTTPS} !^on$
+    RewriteCond %{HTTP_HOST} ^staging\.eh-innenarchitektur\.de [NC]
+    RewriteRule (.*) https://staging.eh-innenarchitektur.de/$1 [L,R=301]
+
+    # redirect http -> https (production)
+    RewriteCond %{HTTPS} !^on$
+    RewriteCond %{HTTP_HOST} ^www\.eh-innenarchitektur\.de [NC]
+    RewriteRule (.*) https://www.eh-innenarchitektur.de/$1 [L,R=301]
+
+    # redirect non-www to www (production)
+    RewriteCond %{HTTP_HOST} ^eh-innenarchitektur\.de [NC]
+    RewriteRule ^(.*) https://www.eh-innenarchitektur.de/$1 [L,R=301]
+
     # Send would-be 404 requests to Craft
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
