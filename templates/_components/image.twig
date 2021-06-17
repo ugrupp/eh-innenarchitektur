@@ -7,7 +7,7 @@
   wrapperClasses: ["bg-gray-100"],
   pictureClasses: [],
   imageClasses: [],
-  imageLazyloadClasses: ["lazyload transition duration-500 filter blur-lg"],
+  imageLazyloadClasses: ["lazyload transition duration-500 opacity-0"],
 } %}
 
 {% set options = options is defined ? defaults|merge(options) : defaults %}
@@ -19,7 +19,7 @@
   {# Set image lazyload classes #}
   {% set imageLazyloadClasses = options.lazyload ? options.imageLazyloadClasses : [] %}
   {% set lazyloadedAdd = "" %}
-  {% set lazyloadedRm = "filter blur-lg" %}
+  {% set lazyloadedRm = "filter blur-lg opacity-0" %}
 
   {% set isSVG = options.image.extension|lower == 'svg' %}
 
