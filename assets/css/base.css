@@ -1,5 +1,6 @@
 html,
 body {
+  hyphens: auto;
   scroll-behavior: smooth;
   scroll-padding-top: calc(theme("width.28") - 1px);
 
