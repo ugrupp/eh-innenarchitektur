@@ -44,10 +44,6 @@
     & li {
       @apply text-lg sm:text-xl;
 
-      & :is(strong, mark) {
-        @apply text-base sm:text-lg;
-      }
-
       &::before {
         content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 31.05 31.05'%3E%3Cg data-name='Ebene 2'%3E%3Cg data-name='Ebene 1'%3E%3Cpath d='m22 15.53-2.83 3.6h-.36l2.08-3.6-2.08-3.61h.36z' style='fill:%23e63209'/%3E%3Cpath style='fill:none;stroke:%23e63209;stroke-miterlimit:10' d='M20.86 15.53H9.1'/%3E%3Ccircle cx='15.52' cy='15.53' r='15.03' style='fill:none;stroke:%23e63209;stroke-miterlimit:10'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
         @apply w-6 h-6 sm:w-8 sm:h-8 -ml-11 sm:-ml-14 lg:-ml-14;

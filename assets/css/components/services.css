@@ -1,5 +1,11 @@
-.services__service .richtext small {
-  display: block;
-  margin-left: auto;
-  @apply max-w-[10rem] sm:max-w-[16rem];
+.services__service .richtext {
+  & small {
+    display: block;
+    margin-left: auto;
+    @apply max-w-[10rem] sm:max-w-[16rem];
+  }
+
+  & .highlight-list :is(strong, mark) {
+    @apply text-xs sm:text-sm;
+  }
 }
