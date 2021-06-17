@@ -49,7 +49,7 @@
       }
 
       &::before {
-        content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 81.4 81.4'%3E%3Cg data-name='Ebene 2'%3E%3Cg data-name='Ebene 1'%3E%3Ccircle cx='40.7' cy='40.7' r='40' style='stroke:%23e63209;stroke-miterlimit:10;fill:none;stroke-width:1.4px'/%3E%3Cpath d='m57.8 40.7-7.52 9.59h-1l5.52-9.59-5.52-9.59h1z' style='fill:%23e63209'/%3E%3Cpath style='stroke:%23e63209;stroke-linejoin:round;fill:none;stroke-width:1.4px' d='M54.91 40.7H23.6'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A");
+        content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 31.05 31.05'%3E%3Cg data-name='Ebene 2'%3E%3Cg data-name='Ebene 1'%3E%3Cpath d='m22 15.53-2.83 3.6h-.36l2.08-3.6-2.08-3.61h.36z' style='fill:%23e63209'/%3E%3Cpath style='fill:none;stroke:%23e63209;stroke-miterlimit:10' d='M20.86 15.53H9.1'/%3E%3Ccircle cx='15.52' cy='15.53' r='15.03' style='fill:none;stroke:%23e63209;stroke-miterlimit:10'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
         @apply w-6 h-6 sm:w-8 sm:h-8 -ml-11 sm:-ml-14 lg:-ml-14;
       }
     }
