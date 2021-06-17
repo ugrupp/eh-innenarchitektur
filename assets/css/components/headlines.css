@@ -1,11 +1,11 @@
 /* Headlines */
 @layer components {
   .headline--h1 {
-    @apply text-3xl leading-tight sm:text-4xl sm:leading-tight;
+    @apply text-3xl leading-tight sm:text-4xl sm:leading-tight tracking-wide;
   }
 
   .headline--h2 {
-    @apply text-2xl leading-tight sm:text-3xl sm:leading-tight;
+    @apply text-2xl leading-tight sm:text-3xl sm:leading-tight tracking-wider;
   }
 
   .headline--h3 {
