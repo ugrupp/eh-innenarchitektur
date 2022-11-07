@@ -11,3 +11,12 @@
     url("../fonts/basiersquaremono/basiersquaremono-regular-webfont.ttf")
       format("truetype");
 }
+
+@font-face {
+  font-family: "neue-haas-grotesk-display";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("../fonts/neuehaas/font.woff2") format("woff2"),
+    url("../fonts/neuehaas/font.woff") format("woff");
+}
