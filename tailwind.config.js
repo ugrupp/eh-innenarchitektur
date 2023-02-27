@@ -1,13 +1,12 @@
 const colors = require("tailwindcss/colors");
 
 module.exports = {
-  mode: "jit",
-  purge: [
+  content: [
     "./templates/**/*.twig",
     "./assets/**/*.{js,ts,vue}",
     "./tailwind-jit-safelist.txt",
   ],
-  darkMode: false, // or 'media' or 'class'
+  media: false, // or 'media' or 'class'
   theme: {
     fontWeight: {
       light: 300,

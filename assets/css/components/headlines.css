@@ -1,26 +1,26 @@
 /* Headlines */
 @layer components {
-  .headline--h1 {
+  .headline--1 {
     @apply text-3xl leading-tight sm:text-4xl sm:leading-tight tracking-wide;
   }
 
-  .headline--h2 {
+  .headline--2 {
     @apply text-2xl leading-tight sm:text-3xl sm:leading-tight tracking-wider;
   }
 
-  .headline--h3 {
+  .headline--3 {
     @apply text-lg leading-tight sm:text-xl sm:leading-tight;
   }
 
-  .headline--h4 {
+  .headline--4 {
     @apply text-base sm:text-lg font-normal font-mono tracking-normal;
   }
 
-  .headline--h5 {
+  .headline--5 {
     @apply text-sm sm:text-base;
   }
 
-  .headline--h6 {
+  .headline--6 {
     @apply text-xs sm:text-sm font-mono font-normal tracking-normal leading-tight;
   }
 }

@@ -22,11 +22,11 @@
           {% set leadContent %}
             {# Category #}
             {% if projectCategory %}
-              <p class="headline--h6 text-red-600 mb-2.5">{{ projectCategory.title }}</p>
+              <p class="headline--6 text-red-600 mb-2.5">{{ projectCategory.title }}</p>
             {% endif %}
 
             {# Title #}
-            <h1 class="headline--h2">{{ entry.title }}</h1>
+            <h1 class="headline--2">{{ entry.title }}</h1>
           {% endset %}
           {{ lead|append(leadContent) }}
 
@@ -112,7 +112,7 @@
             {% set slider2Content %}
               {# Small headline #}
               {% if entry.projectSlider2Headline|length %}
-                <h2 class="headline--h6 uppercase text-red-600 mb-3">{{ entry.projectSlider2Headline }}</h2>
+                <h2 class="headline--6 uppercase text-red-600 mb-3">{{ entry.projectSlider2Headline }}</h2>
               {% endif %}
 
               {# Slider #}

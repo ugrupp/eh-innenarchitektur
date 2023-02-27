@@ -1,4 +1,4 @@
 .menu-level-2 {
   box-shadow: theme("space[5]") 0 0 theme("colors.warmGray[50]"),
-    theme("space[-5]") 0 0 theme("colors.warmGray[50]");
+    calc(theme("space[5]") * -1) 0 0 theme("colors.warmGray[50]");
 }

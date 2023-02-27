@@ -15,8 +15,8 @@
       {% block content %}
         {# Title #}
         <div class="flex">
-          <span class="text-red-600 headline--h6 w-12 md:w-24 flex-shrink-0">{{ "%02d"|format(topOptions.index) }}</span>
-          <h2 class="headline--h1 font-mono tracking-normal font-normal">{{ topOptions.category.title }}</h2>
+          <span class="text-red-600 headline--6 w-12 md:w-24 flex-shrink-0">{{ "%02d"|format(topOptions.index) }}</span>
+          <h2 class="headline--1 font-mono tracking-normal font-normal">{{ topOptions.category.title }}</h2>
         </div>
 
         {# Grid #}
@@ -84,7 +84,7 @@
                 {% endif %}
 
                 {# CTA #}
-                <p class="headline--h6 uppercase flex items-center space-x-3 sm:space-x-5 mt-5 2xl:absolute 2xl:left-0 2xl:top-full transition-transform duration-300 transform-gpu lg:group-hover:translate-x-2">
+                <p class="headline--6 uppercase flex items-center space-x-3 sm:space-x-5 mt-5 2xl:absolute 2xl:left-0 2xl:top-full transition-transform duration-300 transform-gpu lg:group-hover:translate-x-2">
                   <span>Zum Projekt</span>
                   {{ svg("@root/assets/img/svg-sprite/arrow-opaque.svg")|attr({ class: 'w-6 h-6 sm:w-7 sm:h-7 flex-shrink-0' }) }}
                 </p>

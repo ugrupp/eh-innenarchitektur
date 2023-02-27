@@ -8,10 +8,10 @@
       {% block content %}
         <div class="max-w-md lg:mx-auto min-h-[40vh] flex flex-col justify-center">
           {# Title #}
-          <h1 class="headline--h1">{{ entry.title }}</h1>
+          <h1 class="headline--1">{{ entry.title }}</h1>
 
           {# CTA #}
-          <a href="{{ siteUrl }}" class="mt-6 headline--h6 uppercase flex items-center space-x-3 sm:space-x-5 transition-transform duration-300 text-red-600 hover:text-red-400">
+          <a href="{{ siteUrl }}" class="mt-6 headline--6 uppercase flex items-center space-x-3 sm:space-x-5 transition-transform duration-300 text-red-600 hover:text-red-400">
             {{ svg("@root/assets/img/svg-sprite/arrow-opaque.svg")|attr({ class: 'w-6 h-6 sm:w-7 sm:h-7 flex-shrink-0 transform rotate-180' }) }}
             <span>Startseite</span>
           </a>

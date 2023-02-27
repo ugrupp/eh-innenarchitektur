@@ -1,4 +1,3 @@
-import legacy from "@vitejs/plugin-legacy";
 import fs from "fs";
 import { ConfigEnv, UserConfig } from "vite";
 import FullReload from "vite-plugin-full-reload";
@@ -32,9 +31,6 @@ const config: (configEnv: ConfigEnv) => UserConfig = ({ command }) => ({
     },
   },
   plugins: [
-    legacy({
-      targets: ["defaults", "not IE 11"],
-    }),
     FullReload(["templates/**/*"]),
     viteImagemin({
       gifsicle: {
