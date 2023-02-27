@@ -5,6 +5,8 @@
 .DS_Store
 node_modules
 
+.ddev
+
 /web/dist
 /web/imager
 /web/photos

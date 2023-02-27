@@ -1,5 +1,5 @@
 import legacy from "@vitejs/plugin-legacy";
-import path from "path";
+import fs from "fs";
 import { ConfigEnv, UserConfig } from "vite";
 import FullReload from "vite-plugin-full-reload";
 import viteImagemin from "vite-plugin-imagemin";
@@ -19,9 +19,17 @@ const config: (configEnv: ConfigEnv) => UserConfig = ({ command }) => ({
     },
   },
   server: {
-    host: "eh-innenarchitektur.nitro",
+    host: "localhost",
     port: 2170,
+    https: {
+      key: fs.readFileSync("../../../.cert/key.pem"),
+      cert: fs.readFileSync("../../../.cert/cert.pem"),
+    },
     strictPort: true,
+    hmr: {
+      host: "localhost",
+      port: 2170,
+    },
   },
   plugins: [
     legacy({

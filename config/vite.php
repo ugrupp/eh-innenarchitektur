@@ -39,7 +39,7 @@ return [
     /**
      * @var string The public URL to the dev server (what appears in `<script src="">` tags
      */
-    'devServerPublic' => 'http://eh-innenarchitektur.nitro:2170/',
+    'devServerPublic' => 'https://localhost:2170/',
 
     /**
      * @var string The public URL to use when not using the dev server

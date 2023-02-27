@@ -23,7 +23,7 @@ fieldLayouts:
             step: null
             tip: null
             title: null
-            type: craft\fieldlayoutelements\AssetTitleField
+            type: craft\fieldlayoutelements\assets\AssetTitleField
             warning: null
             width: 100
           -
@@ -37,13 +37,11 @@ fieldLayouts:
             width: 100
         name: Inhalt
         sortOrder: 1
+fs: pictograms
 handle: pictograms
 hasUrls: true
 name: Piktogramme
-settings:
-  path: '@webroot/pictograms'
 sortOrder: 0
 titleTranslationKeyFormat: null
 titleTranslationMethod: null
-type: craft\volumes\Local
 url: '@web/pictograms'

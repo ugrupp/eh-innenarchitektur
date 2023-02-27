@@ -37,4 +37,9 @@ return [
 
     // Whether images should be upscaled if the provided transform size is larger than the image
     'upscaleImages' => false,
+
+    // We recommend overriding the @web alias if you plan on using it, to avoid a cache poisoning vulnerability.
+    'aliases' => [
+        '@web' => App::env('PRIMARY_SITE_URL'),
+    ],
 ];

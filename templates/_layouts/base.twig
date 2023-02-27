@@ -42,11 +42,11 @@
  #
  #   * `foot`: This block is placed directly before the closing `</body>` tag.
  #             Child templates can use this to include Javascript files, etc.
--#}{% spaceless %}
+-#}{% apply spaceless %}
 
 {# Global variables #}
 
-{% endspaceless %}<!DOCTYPE html>
+{% endapply %}<!DOCTYPE html>
 <html
   xmlns="http://www.w3.org/1999/xhtml"
   itemscope=""

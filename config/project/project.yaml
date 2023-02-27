@@ -1,8 +1,171 @@
-dateModified: 1623364897
+dateModified: 1677455899
+elementSources:
+  craft\elements\Entry:
+    -
+      heading: Einzeleinträge
+      type: heading
+    -
+      key: 'single:009214d7-e8e7-4fb1-a036-0c05208d6cac' # Startseite
+      tableAttributes:
+        - dateUpdated
+        - link
+      type: native
+    -
+      key: 'single:c444e3ce-763f-4fba-b6dc-743ff70d6475' # Fehlerseite
+      type: native
+    -
+      heading: Strukturen
+      type: heading
+    -
+      key: 'section:481c6233-0299-44fe-a150-d7432630deab' # Seitenbaum
+      tableAttributes:
+        - dateUpdated
+        - uri
+      type: native
+    -
+      key: 'section:f153498e-d8de-4bbb-85e8-91be9c854a96' # Projekte
+      tableAttributes:
+        - 'field:ca0bc79d-d050-4814-8620-eefe3236f1b5' # Projektkategorie
+        - dateUpdated
+        - uri
+      type: native
+    -
+      heading: Menü
+      type: heading
+    -
+      key: 'section:745e1913-3abf-44ac-9ac1-ab0b5d4b68f2' # Menü
+      type: native
+    -
+      key: 'section:34239d13-b446-4707-8047-5af14e0c6bd2' # Service-Menü
+      type: native
+    -
+      heading: ''
+      type: heading
+    -
+      key: '*'
+      tableAttributes:
+        - section
+        - postDate
+        - expiryDate
+        - link
+      type: native
 email:
   fromEmail: urs@21sieben.de
   fromName: 'Craft Starter 2021'
   transportType: craft\mail\transportadapters\Sendmail
+fs:
+  files:
+    hasUrls: true
+    name: Dateien
+    settings:
+      path: '@webroot/files'
+    type: craft\fs\Local
+    url: '@web/files'
+  images:
+    hasUrls: true
+    name: Bilder
+    settings:
+      path: '@webroot/images'
+    type: craft\fs\Local
+    url: '@web/images'
+  pictograms:
+    hasUrls: true
+    name: Piktogramme
+    settings:
+      path: '@webroot/pictograms'
+    type: craft\fs\Local
+    url: '@web/pictograms'
+meta:
+  __names__:
+    0a14362e-d761-4694-904a-bf329b2b99f3: Slide # Slide
+    1c84eac1-8855-44cf-9f9b-688ac7e8b763: Engagement # Engagement
+    2ed64c05-eb8c-4d88-9ad0-3e29542829b8: Bild # Bild
+    3d0df712-869a-4931-b61a-83ac6e20daf8: Bild # Bild
+    4ed46586-0a29-4c32-b6d9-55057597ead9: 'Text 1' # Text 1
+    5bb689ff-ff5d-4e7d-966b-9eeb1e055c1a: Leistungen # Leistungen
+    5f0eee9f-25ed-480d-a5ee-9ce6bea7ecf5: Projektkategorien # Projektkategorien
+    7ffc34d4-a657-4360-afb7-0a5eb1f677d9: Piktogramme # Piktogramme
+    8be22e7a-0613-46b1-aa0f-32c15c8a8148: 'Public Schema' # Public Schema
+    9acfebe0-1383-4ab9-bf40-0ac39d03686d: Startseite # Startseite
+    9ae8736f-64b4-4555-9161-2b45e1a6dad8: Adresse # Adresse
+    22f8643a-6128-4712-b8b0-11ec8c8fb59f: Link # Link
+    25abf69f-8c64-4e9f-95de-8e7ca808b9d9: Leistung # Leistung
+    33ae6982-6147-4e5b-97ca-c88ab8c79295: Footer # Footer
+    48e1d91a-6fad-4fe5-bb84-20098ba9c0fa: Text # Text
+    51dcc0e6-30f1-43a9-8ef2-f024a9e471dc: Presse # Presse
+    58fe56b4-c788-4da9-b003-59661e5c3816: Leistungen # Leistungen
+    60f90423-2534-4e9e-88d8-6921be51f41a: 'Text 2' # Text 2
+    68b975b2-e7c4-4b24-98ec-e2060e92603d: Alt-Text # Alt-Text
+    069a266b-0c75-40a8-a3b9-8540626e6f6f: SEO # SEO
+    74d08675-6b1f-460c-a449-ed5a7e232290: Map-Link # Map-Link
+    85b32876-7624-416a-9e71-6a74a4cf23fa: Spacing # Spacing
+    88e6a398-3947-40b1-b405-ffcc7032e012: Seite # Seite
+    98f932bd-8c6e-4dce-a913-9022c49df939: Lead # Lead
+    114da0c0-1d67-43e9-9966-1e7967900a92: 'Kleiner Slider' # Kleiner Slider
+    163d7a3b-3435-4fe0-99ed-4afd32dfd8d5: Footer # Footer
+    164e5bca-e2e3-426c-a6e2-c1ab69e2fcef: Body # Body
+    268b1051-db1a-4ed1-903d-ffe1ac06faef: Menu-Link # Menu-Link
+    289eda0a-6e62-4d9d-b494-2bb078eb2c94: 'Bild 1' # Bild 1
+    335a10e2-8b40-46e0-8f05-2a0883f6e52a: 'EH Innenarchitektur' # EH Innenarchitektur
+    448f219b-e301-49cf-9000-98d276d1e4ab: Foot # Foot
+    481c6233-0299-44fe-a150-d7432630deab: Seitenbaum # Seitenbaum
+    522e3c84-1125-4614-8706-6488944fad08: 'Bild 2' # Bild 2
+    533b1ed2-c1fd-4112-8712-a89b69b5a542: Fehlerseite # Fehlerseite
+    637f5208-30a9-45a6-a8d5-53e10b7de4cf: 'EH Innenarchitektur' # EH Innenarchitektur
+    745e1913-3abf-44ac-9ac1-ab0b5d4b68f2: Menü # Menü
+    803cec06-15a6-4df8-9661-d4b2f7ae8777: Body # Body
+    1441d23a-77fd-4cb1-9e07-7deda2c44aca: Bilder # Bilder
+    1589b58e-4fce-4039-82d2-8b47edc2cbca: Menü-Item # Menü-Item
+    2642b8bc-522e-4f01-af29-34142084e2e2: Slide # Slide
+    2912fb8f-0022-4bf9-9a06-3576f887a666: Map # Map
+    4675e844-5d79-4947-8e42-76c7f3fac831: Body # Body
+    8028aa1c-bcf5-40fc-906a-fdd777682c1f: Bild # Bild
+    009214d7-e8e7-4fb1-a036-0c05208d6cac: Startseite # Startseite
+    21403b57-0519-407e-97a2-58440ba2b647: 'Über mich' # Über mich
+    34239d13-b446-4707-8047-5af14e0c6bd2: Service-Menü # Service-Menü
+    66247b49-40a2-4fe8-9f96-07e0c4288932: Leistungen # Leistungen
+    92340a5e-d8bf-42d8-bef4-0fb91b286e50: Text # Text
+    161941d2-310a-4dc4-84f8-750af394454c: Lead # Lead
+    0338854d-7c8c-49ea-b537-1f39ec5a4c62: Allgemein # Allgemein
+    971783c5-870d-4987-8ec2-ef8a766df4a5: Slider # Slider
+    7620723c-c775-45da-b35b-0859ad5d46de: Portrait # Portrait
+    51023438-fa47-4a2d-94a3-5ad8a9d63cd2: 'Bild 1' # Bild 1
+    61267367-7aa4-4684-914c-dc8cb48ec63c: 'Bild 1' # Bild 1
+    70497620-be96-4271-b458-b73737445a26: Slide # Slide
+    73486341-6e47-4943-95ab-1c8bc49e345f: Projekte # Projekte
+    75447463-f001-4227-a347-d8a08450798a: 'Bild 2' # Bild 2
+    96128586-add9-4174-90de-9ee5861e786c: Lead # Lead
+    a0fa9084-5a08-4051-9cc0-43794e9edea1: Lead # Lead
+    a2ff65ee-37ac-459a-b8b6-260a51655430: Content-Builder # Content-Builder
+    acfbef1a-7c89-4a72-ae09-969d22e5ac18: Menü # Menü
+    adaff0e9-ea28-47d8-9d74-cade79791bcf: 'Headline kleiner Slider' # Headline kleiner Slider
+    ae390759-b82f-49ab-bc1e-3b303024b39e: Slider # Slider
+    af349af2-7416-4eaf-9cc8-746371669c72: Link # Link
+    afdb519d-2e36-4b4f-a8ff-81c995ac2b6d: Hauptbild # Hauptbild
+    bd0b654e-c321-43b6-a6e4-c1eee7eea226: 'Textabstand unten beibehalten' # Textabstand unten beibehalten
+    be79d7ad-e53a-4fb9-8bf4-fdcf39fb8de6: Werdegang # Werdegang
+    bebbb652-0c54-4628-ac0e-2bf1b8f92850: 'Bild 3' # Bild 3
+    bf6e0957-5887-41c6-8a66-6c3bbf75f221: 'Bild 2' # Bild 2
+    c4b19722-35a5-4b16-95eb-95bae393243d: Hero # Hero
+    c70eea9f-e92f-4a5f-a212-e426ee3c7bec: Lead # Lead
+    c88a9b7a-93fc-405c-b9d5-a53a6e29189e: 'Text + Text' # Text + Text
+    c444e3ce-763f-4fba-b6dc-743ff70d6475: Fehlerseite # Fehlerseite
+    c862da69-4c2d-4910-9e26-7baac40efbe4: Projekt # Projekt
+    c6512dec-f5c3-46cc-b9eb-3151e8711ba9: Bild # Bild
+    c540410c-ed04-4c28-af9d-7909aff8185c: Body # Body
+    ca0bc79d-d050-4814-8620-eefe3236f1b5: Projektkategorie # Projektkategorie
+    cd82cc67-fcf0-4003-a071-716181df7626: Foot # Foot
+    ce49713a-870c-4b7f-8f6b-5db63f52eede: Intro # Intro
+    d46bc7c1-9ab9-4f32-81b3-ef71a64dfcce: Dateien # Dateien
+    dcc8b04d-d98b-48c7-b3b1-c7cd65e1f96a: Leistungen # Leistungen
+    de3df026-cbe2-4e69-8919-8e4cacb92911: Service-Menü-Item # Service-Menü-Item
+    e9fa5d8e-26b4-48e9-9af8-ed203e3b9cee: Features # Features
+    e267481d-1465-404d-9298-44399fcbb1f3: Body # Body
+    ed10ed9f-dc78-4161-aad7-4ae6c635479f: Bild # Bild
+    f055d515-2dc7-4d1e-b17b-075689d2d2f3: Bildunterschrift # Bildunterschrift
+    f153498e-d8de-4bbb-85e8-91be9c854a96: Projekte # Projekte
+    f2824332-ea64-4526-ac08-2a402989e8c7: Lead # Lead
+    fac07c15-8566-4efd-baab-35b5d55b1f8e: Text # Text
 plugins:
   command-palette:
     edition: standard
@@ -151,7 +314,7 @@ plugins:
   typedlinkfield:
     edition: standard
     enabled: true
-    schemaVersion: 1.0.0
+    schemaVersion: 2.0.0
   vite:
     edition: standard
     enabled: true
@@ -161,10 +324,11 @@ system:
   live: true
   name: 'EH Innenarchitektur'
   retryDuration: null
-  schemaVersion: 3.6.8
+  schemaVersion: 4.0.0.9
   timeZone: Europe/Berlin
 users:
   allowPublicRegistration: false
+  deactivateByDefault: false
   defaultGroup: null
   photoSubpath: null
   photoVolumeUid: null
