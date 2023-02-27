@@ -10,8 +10,8 @@ set('application', 'eh-innenarchitektur');
 set('repository', 'git@github.com:ugrupp/eh-innenarchitektur.git');
 
 // Override php and composer binaries
-set('bin/composer', '/usr/bin/php7.4-cli ~/composer.phar');
-set('bin/php', '/usr/bin/php7.4-cli');
+set('bin/composer', '/usr/bin/php8.2-cli ~/composer.phar');
+set('bin/php', '/usr/bin/php8.2-cli');
 
 // Shared files/dirs between deploys
 set('shared_files', [
