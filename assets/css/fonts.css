@@ -12,11 +12,15 @@
       format("truetype");
 }
 
+/* almarai-300 - arabic */
 @font-face {
-  font-family: "neue-haas-grotesk-display";
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Almarai";
   font-style: normal;
   font-weight: 300;
-  font-display: swap;
-  src: url("../fonts/neuehaas/font.woff2") format("woff2"),
-    url("../fonts/neuehaas/font.woff") format("woff");
+  src: url("../fonts/almarai-v12-arabic/almarai-v12-arabic-300.woff2")
+      format("woff2"),
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+      url("../fonts/almarai-v12-arabic/almarai-v12-arabic-300.ttf")
+      format("truetype"); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
 }

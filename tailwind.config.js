@@ -14,7 +14,7 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        sans: ["neue-haas-grotesk-display", "sans-serif"],
+        sans: ["Almarai", "sans-serif"],
         mono: [
           "basier_square_mono",
           "ui-monospace",
