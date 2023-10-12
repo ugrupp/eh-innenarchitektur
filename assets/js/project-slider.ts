@@ -41,16 +41,6 @@ document.addEventListener("DOMContentLoaded", () => {
           },
         },
       });
-
-      if (typeof swiper.navigation === "object") {
-        [swiper.navigation.prevEl, swiper.navigation.nextEl]
-          .filter((v) => v)
-          .forEach((el) => {
-            el.addEventListener("click", (e) => {
-              (e.currentTarget as HTMLElement).blur();
-            });
-          });
-      }
     }
   });
 });

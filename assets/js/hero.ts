@@ -1,18 +1,16 @@
-import Swiper from "swiper";
-import SwiperCore, { Autoplay, Navigation, Pagination } from "swiper/core";
+import Swiper, { Autoplay, Navigation, Pagination } from "swiper";
 import "swiper/swiper.min.css";
-
-SwiperCore.use([Autoplay, Navigation, Pagination]);
 
 document.addEventListener("DOMContentLoaded", () => {
   const containerSentinel: HTMLElement = document.querySelector(
     "[data-hero-container-sentinel]"
-  );
+  )!;
 
   document.querySelectorAll("[data-hero-slider]").forEach((slider) => {
     // only init swiper if there's more than 1 slide
     if (slider.querySelectorAll(".swiper-slide").length > 1) {
       let swiper = new Swiper(slider as HTMLElement, {
+        modules: [Autoplay, Navigation, Pagination],
         loop: true,
         speed: 1000,
         grabCursor: true,
@@ -74,21 +72,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const setSlideWidth = () => {
         if (containerSentinel) {
-          swiper.slides.css("width", `${containerSentinel.offsetWidth}px`);
+          swiper.slides.forEach((slide) => {
+            slide.style.width = `${containerSentinel.offsetWidth}px`;
+          });
           swiper.update();
         }
       };
 
       setSlideWidth();
       swiper.on("resize", setSlideWidth);
-
-      if (typeof swiper.navigation === "object") {
-        [swiper.navigation.prevEl, swiper.navigation.nextEl].forEach((el) => {
-          el.addEventListener("click", (e) => {
-            (e.currentTarget as HTMLElement).blur();
-          });
-        });
-      }
     }
   });
 });
