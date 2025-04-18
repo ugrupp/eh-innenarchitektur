@@ -1,4 +1,4 @@
-dateModified: 1701087572
+dateModified: 1744977399
 elementSources:
   craft\elements\Entry:
     -
@@ -324,7 +324,7 @@ system:
   live: true
   name: 'EH Innenarchitektur'
   retryDuration: null
-  schemaVersion: 4.5.3.0
+  schemaVersion: 4.15.0.0
   timeZone: Europe/Berlin
 users:
   allowPublicRegistration: false
