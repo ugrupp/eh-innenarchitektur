@@ -9,6 +9,7 @@
  */
 
 use craft\helpers\App;
+use mikehaertl\shellcommand\Command;
 
 $isDev = App::env('ENVIRONMENT') === 'dev';
 $isProd = App::env('ENVIRONMENT') === 'production';
@@ -37,6 +38,12 @@ return [
 
     // Whether images should be upscaled if the provided transform size is larger than the image
     'upscaleImages' => false,
+
+    // IONOS' MariaDB client verifies certificates by default, but its database
+    // servers use an IONOS-internal CA that is not in the hosting trust store.
+    // Keep TLS enabled while allowing Craft's backup/restore commands to connect.
+    'backupCommand' => static fn(Command $command) => $command->addArg('--skip-ssl-verify-server-cert'),
+    'restoreCommand' => static fn(Command $command) => $command->addArg('--skip-ssl-verify-server-cert'),
 
     // We recommend overriding the @web alias if you plan on using it, to avoid a cache poisoning vulnerability.
     'aliases' => [
