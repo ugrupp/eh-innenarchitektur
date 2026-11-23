@@ -1,0 +1,99 @@
+{% set testimonials = craft.entries.section('testimonials').testimonialShowPreview(true).all()
+  |filter(testimonial => testimonial.testimonialPreview is not empty)
+  |slice(0, 3)
+%}
+
+{% if testimonials is not empty %}
+  {% set testimonialsIndex = craft.entries.section('testimonialsIndex').one() %}
+
+  <section id="kundenstimmen"{{ attr({ class: ['bg-warmGray-100']|merge(options.classes ?? []) }) }}>
+    {% embed "_components/container" with {
+      entry: entry,
+      testimonials: testimonials,
+      testimonialsIndex: testimonialsIndex,
+    } only %}
+      {% block content %}
+        <div class="grid grid-cols-12 gap-y-8 items-start">
+          {# Headline #}
+          {% if entry.testimonialsHeadline is not empty %}
+            {% embed "_components/text" with {
+              entry: entry,
+              options: { classes: [
+                "col-start-1 col-span-10 md:col-start-1 md:col-span-7 lg:row-start-1 lg:col-span-5",
+                "[&.richtext_h2]:headline--1",
+              ] },
+            } only %}
+              {% block content entry.testimonialsHeadline %}
+            {% endembed %}
+          {% endif %}
+
+          {# Intro #}
+          {% if entry.testimonialsIntro is not empty %}
+            {% embed "_components/text" with {
+              entry: entry,
+              options: { classes: [
+                "lg:mt-3",
+                "col-start-3 col-span-10 md:col-start-3 md:col-span-7 lg:row-start-2 lg:col-start-2 lg:col-span-5 xl:col-start-2 xl:col-span-4",
+                "[&_p]:text-lg [&_p]:tracking-wide sm:[&_p]:text-xl",
+              ] },
+            } only %}
+              {% block content entry.testimonialsIntro %}
+            {% endembed %}
+          {% endif %}
+
+          {# Index page link #}
+          {% if testimonialsIndex and testimonialsIndex.url %}
+            <div class="col-start-1 col-span-10 md:col-span-7 lg:col-span-5 lg:row-start-3 lg:mt-3">
+              <a href="{{ testimonialsIndex.url }}" class="headline--6 uppercase inline-flex items-center space-x-3 sm:space-x-5 transition-transform duration-300 transform-gpu lg:hover:translate-x-2 text-red-600">
+                <span>Alle Kundenstimmen lesen</span>
+                {{ svg("@root/assets/img/svg-sprite/arrow-opaque.svg")|attr({ class: 'h-7 w-7 shrink-0 sm:h-8 sm:w-8', 'aria-hidden': 'true' }) }}
+              </a>
+            </div>
+          {% endif %}
+
+          {# Testimonial 1 #}
+          {% include "_components/testimonial-preview" with {
+            testimonial: testimonials|first,
+            options: {
+              classes: ["col-start-1 col-span-10 md:col-start-1 md:col-span-7 lg:row-start-3 lg:col-start-8 lg:col-span-5 xl:col-start-9 mt-10 lg:mt-3"],
+              quoteClasses: ["[&_p]:text-2xl [&_p]:leading-tight sm:[&_p]:text-3xl sm:[&_p]:leading-tight"],
+            },
+          } only %}
+
+          {# Note #}
+          {% if entry.testimonialsNote is not empty %}
+            {% embed "_components/text" with {
+              entry: entry,
+              options: { classes: [
+                "mt-10 lg:mt-0 col-start-3 col-span-10 lg:col-start-8 lg:col-span-5 xl:col-start-9 lg:row-start-1 lg:row-span-2",
+                "text-right text-red-600 [&_h6]:leading-snug [&_h6]:max-w-[32ch] [&_h6]:inline-block",
+              ] },
+            } only %}
+              {% block content entry.testimonialsNote %}
+            {% endembed %}
+          {% endif %}
+
+          {# Testimonial 2 #}
+          {% if testimonials[1] is defined %}
+            {% include "_components/testimonial-preview" with {
+              testimonial: testimonials[1],
+              options: { classes: [
+                "col-start-1 col-end-11 md:col-end-8 lg:col-end-6 xl:col-end-5 lg:row-start-4",
+              ] },
+            } only %}
+          {% endif %}
+
+          {# Testimonial 3 #}
+          {% if testimonials[2] is defined %}
+            {% include "_components/testimonial-preview" with {
+              testimonial: testimonials[2],
+              options: { classes: [
+                "col-start-3 col-end-13 md:col-start-6 lg:col-start-5 lg:col-end-10 xl:col-end-9 lg:row-start-5"
+              ] },
+            } only %}
+          {% endif %}
+        </div>
+      {% endblock %}
+    {% endembed %}
+  </section>
+{% endif %}

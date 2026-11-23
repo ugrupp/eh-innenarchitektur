@@ -40,6 +40,7 @@ module.exports = {
       colors: {
         warmGray: {
           50: "#f9f9f9",
+          100: "#e5e5e5",
           600: "#4b4a46",
         },
         red: {

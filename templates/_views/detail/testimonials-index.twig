@@ -1,0 +1,37 @@
+{% extends "_views/detail/default" %}
+
+{% block view_article %}
+  {% set testimonials = craft.entries.section('testimonials').all() %}
+
+  <div class="bg-warmGray-50 pb-32 lg:pb-56">
+    {% embed "_components/container" with {
+      testimonials: testimonials,
+      entry: entry
+    } only %}
+      {% block content %}
+        {% if entry.testimonialsHeadline is not empty %}
+          {% embed "_components/text" with {
+            entry: entry,
+            options: { classes: ["mb-20"] },
+          } only %}
+            {% block content entry.testimonialsHeadline %}
+          {% endembed %}
+        {% endif %}
+
+        {% if testimonials is not empty %}
+          <div class="lg:columns-2 lg:gap-x-[clamp(4rem,calc(100%_-_60rem),25rem)]">
+            {% for testimonial in testimonials %}
+              {% include "_components/testimonial-full" with {
+                testimonial: testimonial,
+                options: { classes: [
+                  "mb-20 break-inside-avoid",
+                  "w-10/12 md:w-7/12 lg:w-full max-lg:odd:ml-auto",
+                ] },
+              } only %}
+            {% endfor %}
+          </div>
+        {% endif %}
+      {% endblock %}
+    {% endembed %}
+  </div>
+{% endblock %}

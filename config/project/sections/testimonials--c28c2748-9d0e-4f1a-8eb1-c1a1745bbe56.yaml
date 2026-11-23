@@ -1,0 +1,15 @@
+defaultPlacement: end
+enableVersioning: true
+handle: testimonials
+name: Kundenstimmen
+propagationMethod: all
+siteSettings:
+  335a10e2-8b40-46e0-8f05-2a0883f6e52a: # EH Innenarchitektur
+    enabledByDefault: true
+    hasUrls: false
+    template: null
+    uriFormat: null
+structure:
+  maxLevels: 1
+  uid: 65d9f817-b77f-4f6d-aadd-87a2a29ddfc7
+type: structure

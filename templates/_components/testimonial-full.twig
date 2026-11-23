@@ -1,0 +1,19 @@
+{% set attribution = [testimonial.testimonialName, testimonial.testimonialLocation]
+  |filter(part => part is not empty)
+  |join(' aus ')
+%}
+
+<figure{{ attr({ class: options.classes ?? null }) }}>
+  {% if attribution is not empty %}
+    <figcaption class="headline--6 text-red-600 mb-1.5">{{ attribution }}:</figcaption>
+  {% endif %}
+
+  {% if testimonial.testimonialBody is not empty %}
+    {% embed "_components/text" with {
+      testimonial: testimonial,
+      options: { tag: "blockquote" },
+    } only %}
+      {% block content testimonial.testimonialBody %}
+    {% endembed %}
+  {% endif %}
+</figure>

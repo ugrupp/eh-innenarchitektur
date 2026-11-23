@@ -1,0 +1,19 @@
+columnSuffix: jjvtcfum
+contentColumnType: text
+fieldGroup: 3654877f-f2ed-4c6f-a822-c471d253e3b0 # Kundenstimmen
+handle: testimonialName
+instructions: null
+name: Name
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: false
+  columnType: null
+  initialRows: 4
+  multiline: false
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

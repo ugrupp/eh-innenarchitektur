@@ -1,0 +1,116 @@
+fieldLayouts:
+  4d3a0fcd-ea9f-4e54-ad3c-3320fdd25f93:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: ce8fa2eb-7b8d-4322-9f14-c4d12d262f8f
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: ef8c3ddf-1b12-4b5b-acea-52df70ac67f9 # Name
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 27793864-e97d-4900-839b-c34c10ba67b5
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: a74fb11a-db6b-4340-9321-764556fe6390 # Ort
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 25dc6f56-ecc9-4253-b937-17174100ed90
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: e3920c3c-2252-4da3-9bbc-4a9033b0ac5f # Preview
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 64d9a950-71de-409f-8968-0b19a6985f7c
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\EmptyFieldConditionRule
+                  fieldUid: e3920c3c-2252-4da3-9bbc-4a9033b0ac5f # Preview
+                  operator: notempty
+                  uid: 4512f65d-ef64-459f-a478-392fcd25b992
+              elementType: craft\elements\Entry
+              fieldContext: global
+            fieldUid: e543316d-e5a6-4ed2-b9aa-ff36045ef8e0 # Preview auf Startseite anzeigen
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d9471180-43b4-44a9-a324-b1b1706b4433
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 7dd59b17-5287-41c7-bb60-e774b52ce820 # Body
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 2362d49c-71b8-4a31-8e63-600b0be7c9dd
+            userCondition: null
+            warning: null
+            width: 100
+        name: Inhalt
+        uid: 5b8dd2a3-1c45-4b09-9bb1-46246c29028f
+        userCondition: null
+handle: testimonial
+hasTitleField: false
+name: Kundenstimme
+section: c28c2748-9d0e-4f1a-8eb1-c1a1745bbe56 # Kundenstimmen
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+sortOrder: 1
+titleFormat: '{testimonialName}, {testimonialLocation}'
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

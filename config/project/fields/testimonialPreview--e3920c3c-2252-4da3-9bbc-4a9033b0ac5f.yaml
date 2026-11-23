@@ -1,0 +1,27 @@
+columnSuffix: moydbpfi
+contentColumnType: text
+fieldGroup: 3654877f-f2ed-4c6f-a822-c471d253e3b0 # Kundenstimmen
+handle: testimonialPreview
+instructions: null
+name: Preview
+searchable: false
+settings:
+  availableTransforms: ''
+  availableVolumes: '*'
+  columnType: text
+  configSelectionMode: choose
+  defaultTransform: ''
+  manualConfig: ''
+  purifierConfig: null
+  purifyHtml: true
+  redactorConfig: null
+  removeEmptyTags: false
+  removeInlineStyles: false
+  removeNbsp: false
+  showHtmlButtonForNonAdmins: true
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+  uiMode: enlarged
+translationKeyFormat: null
+translationMethod: none
+type: craft\redactor\Field

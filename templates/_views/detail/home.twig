@@ -27,6 +27,11 @@
       } %}
     </div>
 
+    {% include "_components/sections/testimonials" with {
+      entry: entry,
+      options: { classes: ["pt-20", "pb-24", "lg:py-36"] },
+    } only %}
+
     {% include "_components/sections/projects" %}
 
     {% include "_components/sections/services" with {

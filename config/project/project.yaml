@@ -1,10 +1,14 @@
-dateModified: 1784243087
+dateModified: 1795425720
 elementSources:
   craft\elements\Entry:
     -
       heading: Einzeleinträge
       type: heading
     -
+      defaultSort:
+        - id
+        - asc
+      disabled: false
       key: 'single:009214d7-e8e7-4fb1-a036-0c05208d6cac' # Startseite
       tableAttributes:
         - dateUpdated
@@ -30,6 +34,23 @@ elementSources:
         - uri
       type: native
     -
+      heading: Kundenstimmen
+      type: heading
+    -
+      key: 'single:7d87b221-4f9b-4ef5-85a0-ff3ff21f8bf0' # Kundenstimmen Übersicht
+      type: native
+    -
+      defaultSort:
+        - structure
+        - asc
+      disabled: false
+      key: 'section:c28c2748-9d0e-4f1a-8eb1-c1a1745bbe56' # Kundenstimmen
+      tableAttributes:
+        - postDate
+        - expiryDate
+        - link
+      type: native
+    -
       heading: Menü
       type: heading
     -
@@ -49,6 +70,9 @@ elementSources:
         - expiryDate
         - link
       type: native
+    -
+      heading: ''
+      type: heading
 email:
   fromEmail: urs@21sieben.de
   fromName: 'Craft Starter 2021'
@@ -78,16 +102,22 @@ fs:
 meta:
   __names__:
     0a14362e-d761-4694-904a-bf329b2b99f3: Slide # Slide
+    1b4f4ff7-f9ab-4a95-9cfd-6d9fb87faac6: Headline # Headline
     1c84eac1-8855-44cf-9f9b-688ac7e8b763: Engagement # Engagement
+    1ef88fee-6700-4b6d-834d-5472e74b2c12: Kundenstimme # Kundenstimme
     2ed64c05-eb8c-4d88-9ad0-3e29542829b8: Bild # Bild
     3d0df712-869a-4931-b61a-83ac6e20daf8: Bild # Bild
     4ed46586-0a29-4c32-b6d9-55057597ead9: 'Text 1' # Text 1
     5bb689ff-ff5d-4e7d-966b-9eeb1e055c1a: Leistungen # Leistungen
     5f0eee9f-25ed-480d-a5ee-9ce6bea7ecf5: Projektkategorien # Projektkategorien
+    7c8297b5-b252-416c-a0b7-f019ac23a6ac: Notiz # Notiz
+    7d87b221-4f9b-4ef5-85a0-ff3ff21f8bf0: 'Kundenstimmen Übersicht' # Kundenstimmen Übersicht
+    7dd59b17-5287-41c7-bb60-e774b52ce820: Body # Body
     7ffc34d4-a657-4360-afb7-0a5eb1f677d9: Piktogramme # Piktogramme
     8be22e7a-0613-46b1-aa0f-32c15c8a8148: 'Public Schema' # Public Schema
     9acfebe0-1383-4ab9-bf40-0ac39d03686d: Startseite # Startseite
     9ae8736f-64b4-4555-9161-2b45e1a6dad8: Adresse # Adresse
+    9ffb2329-1f33-4419-95be-9dd170099856: Intro # Intro
     22f8643a-6128-4712-b8b0-11ec8c8fb59f: Link # Link
     25abf69f-8c64-4e9f-95de-8e7ca808b9d9: Leistung # Leistung
     33ae6982-6147-4e5b-97ca-c88ab8c79295: Footer # Footer
@@ -128,6 +158,7 @@ meta:
     161941d2-310a-4dc4-84f8-750af394454c: Lead # Lead
     0338854d-7c8c-49ea-b537-1f39ec5a4c62: Allgemein # Allgemein
     971783c5-870d-4987-8ec2-ef8a766df4a5: Slider # Slider
+    3654877f-f2ed-4c6f-a822-c471d253e3b0: Kundenstimmen # Kundenstimmen
     7620723c-c775-45da-b35b-0859ad5d46de: Portrait # Portrait
     51023438-fa47-4a2d-94a3-5ad8a9d63cd2: 'Bild 1' # Bild 1
     61267367-7aa4-4684-914c-dc8cb48ec63c: 'Bild 1' # Bild 1
@@ -137,6 +168,8 @@ meta:
     96128586-add9-4174-90de-9ee5861e786c: Lead # Lead
     a0fa9084-5a08-4051-9cc0-43794e9edea1: Lead # Lead
     a2ff65ee-37ac-459a-b8b6-260a51655430: Content-Builder # Content-Builder
+    a74fb11a-db6b-4340-9321-764556fe6390: Ort # Ort
+    a22275c0-e9f6-42a8-86a1-72fcbc360369: 'Kundenstimmen Übersicht' # Kundenstimmen Übersicht
     acfbef1a-7c89-4a72-ae09-969d22e5ac18: Menü # Menü
     adaff0e9-ea28-47d8-9d74-cade79791bcf: 'Headline kleiner Slider' # Headline kleiner Slider
     ae390759-b82f-49ab-bc1e-3b303024b39e: Slider # Slider
@@ -147,6 +180,7 @@ meta:
     bebbb652-0c54-4628-ac0e-2bf1b8f92850: 'Bild 3' # Bild 3
     bf6e0957-5887-41c6-8a66-6c3bbf75f221: 'Bild 2' # Bild 2
     c4b19722-35a5-4b16-95eb-95bae393243d: Hero # Hero
+    c28c2748-9d0e-4f1a-8eb1-c1a1745bbe56: Kundenstimmen # Kundenstimmen
     c70eea9f-e92f-4a5f-a212-e426ee3c7bec: Lead # Lead
     c88a9b7a-93fc-405c-b9d5-a53a6e29189e: 'Text + Text' # Text + Text
     c444e3ce-763f-4fba-b6dc-743ff70d6475: Fehlerseite # Fehlerseite
@@ -160,8 +194,11 @@ meta:
     dcc8b04d-d98b-48c7-b3b1-c7cd65e1f96a: Leistungen # Leistungen
     de3df026-cbe2-4e69-8919-8e4cacb92911: Service-Menü-Item # Service-Menü-Item
     e9fa5d8e-26b4-48e9-9af8-ed203e3b9cee: Features # Features
+    e3920c3c-2252-4da3-9bbc-4a9033b0ac5f: Preview # Preview
     e267481d-1465-404d-9298-44399fcbb1f3: Body # Body
+    e543316d-e5a6-4ed2-b9aa-ff36045ef8e0: 'Preview auf Startseite anzeigen' # Preview auf Startseite anzeigen
     ed10ed9f-dc78-4161-aad7-4ae6c635479f: Bild # Bild
+    ef8c3ddf-1b12-4b5b-acea-52df70ac67f9: Name # Name
     f055d515-2dc7-4d1e-b17b-075689d2d2f3: Bildunterschrift # Bildunterschrift
     f153498e-d8de-4bbb-85e8-91be9c854a96: Projekte # Projekte
     f2824332-ea64-4526-ac08-2a402989e8c7: Lead # Lead

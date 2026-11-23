@@ -1,0 +1,77 @@
+fieldLayouts:
+  66c5024c-3811-4af3-847b-c4982c3bcb85:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 329f4bef-695e-402c-91d4-ecfa2614a0e7
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 1b4f4ff7-f9ab-4a95-9cfd-6d9fb87faac6 # Headline
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: fa51d542-80be-4c6b-ba86-b6c455e76519
+            userCondition: null
+            warning: null
+            width: 100
+        name: Inhalt
+        uid: 16d9ec00-265d-4cab-be90-83850926c73d
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 069a266b-0c75-40a8-a3b9-8540626e6f6f # SEO
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: f7fb2f8d-a91a-4121-8303-5a92336b5ac2
+            userCondition: null
+            warning: null
+            width: 100
+        name: SEO
+        uid: c9a07a25-b876-4e44-a678-300d9492a3ed
+        userCondition: null
+handle: testimonialsIndex
+hasTitleField: false
+name: 'Kundenstimmen Übersicht'
+section: 7d87b221-4f9b-4ef5-85a0-ff3ff21f8bf0 # Kundenstimmen Übersicht
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+sortOrder: 1
+titleFormat: '{section.name|raw}'
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
